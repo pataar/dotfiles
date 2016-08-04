@@ -22,3 +22,6 @@ curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 
 xcode-select --install
+if test $(which npm); then
+  npm install -g cordova bower ionic xcode ios-depoy depcheck
+fi
