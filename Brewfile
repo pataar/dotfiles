@@ -48,13 +48,20 @@ brew 'xctool'
 
 # Install PHP stuff
 brew 'php56'
+brew 'php70'
 brew 'mysql'
 brew 'php56-mcrypt'
+brew 'php70-mcrypt'
 brew 'php56-memcached'
+brew 'php70-memcached'
 brew 'php56-imagick'
-brew 'httpd24'
+brew 'php70-imagick'
 brew 'php56-xdebug'
+brew 'php70-xdebug'
 brew 'php56-opcache'
+brew 'php70-opcache'
+
+brew 'httpd24'
 
 
 # Apps
