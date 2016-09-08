@@ -87,9 +87,18 @@ alias weather="curl -4 http://wttr.in"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias alias-help="echo \"restart-services ssh-gitlab brew-upgrade proj-install proj-outdated\""
+alias restart-services="brew services restart mysql && sudo brew services restart httpd24"
+alias brew-upgrade="brew update && brew upgrade"
+alias proj-install="npm install && composer install"
+alias proj-outdated="npm outdated && npm outdated -g && composer outdated"
+
+export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH=${PATH}:/usr/local/sbin:/devtools/android-sdk-macosx/platform-tools:/devtools/android-sdk-macosx/tools:~/.composer/vendor/bin
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 export DEFAULT_USER="pieter"
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/Users/pieter/bin
+
