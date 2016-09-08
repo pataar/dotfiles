@@ -4,6 +4,8 @@ tap 'caskroom/fonts'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
 tap 'homebrew/dupes'
+tap 'homebrew/php'
+tap 'homebrew/apache'
 
 # Make sure apps get installed in system Applications dir
 cask_args appdir: '/Applications'
@@ -43,6 +45,17 @@ brew 'trash'
 brew 'wget'
 brew 'whois'
 brew 'xctool'
+
+# Install PHP stuff
+brew 'php56'
+brew 'mysql'
+brew 'php56-mcrypt'
+brew 'php56-memcached'
+brew 'php56-imagick'
+brew 'httpd24'
+brew 'php56-xdebug'
+brew 'php56-opcache'
+
 
 # Apps
 cask 'aerial'
