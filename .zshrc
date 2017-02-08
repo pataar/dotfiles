@@ -61,32 +61,6 @@ source $ZSH/oh-my-zsh.sh
 alias art="php artisan"
 alias reloadcli="source $HOME/.zshrc"
 alias weather="curl -4 http://wttr.in"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 alias alias-help="echo \"restart-services ssh-gitlab brew-upgrade proj-install proj-outdated\""
 alias restart-services="brew services restart mysql && sudo brew services restart httpd24"
 alias brew-upgrade="brew update && brew upgrade"
@@ -101,4 +75,3 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 export DEFAULT_USER="pieter"
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/Users/pieter/bin
-
