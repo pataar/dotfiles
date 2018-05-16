@@ -1,0 +1,66 @@
+{
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.colorTheme": "Monokai",
+	"editor.scrollBeyondLastLine": false,
+	"files.autoSave": "onWindowChange",
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/.idea": true,
+		"**/CVS": true,
+		"**/.DS_Store": true
+	},
+	"search.exclude": {
+		"**/build": true,
+		"**/node_modules": true,
+		"**/bower_components": true
+	},
+	"editor.fontFamily": "Fira Code",
+	"editor.fontLigatures": true,
+	"editor.minimap.enabled": false,
+	"workbench.startupEditor": "newUntitledFile",
+	"files.associations": {
+		"Fastfile": "ruby",
+		"Deliverfile": "ruby",
+		"Appfile": "ruby",
+		"Snapfile": "ruby",
+		"Gemfile": "ruby",
+		"Matchfile": "ruby",
+		"Gymfile": "ruby",
+		"*.twig": "handlebars"
+	},
+	"window.newWindowDimensions": "maximized",
+	"search.useIgnoreFilesByDefault": true,
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"explorer.openEditors.visible": 0,
+	"vsicons.projectDetection.disableDetect": true,
+	"files.trimTrailingWhitespace": true,
+	"gitlens.advanced.messages": {
+		"suppressCommitHasNoPreviousCommitWarning": false,
+		"suppressCommitNotFoundWarning": false,
+		"suppressFileNotUnderSourceControlWarning": false,
+		"suppressGitVersionWarning": false,
+		"suppressLineUncommittedWarning": false,
+		"suppressNoRepositoryWarning": false,
+		"suppressResultsExplorerNotice": false,
+		"suppressShowKeyBindingsNotice": true,
+		"suppressUpdateNotice": false,
+		"suppressWelcomeNotice": true
+	},
+	"editor.tokenColorCustomizations": {
+		"textMateRules": [
+			{
+				"scope": "meta.embedded",
+				"settings": {
+					"foreground": "#f0f"
+				}
+			}
+		]
+	},
+	"git.autofetch": true,
+	"gitlab.instanceUrl": "https://gitlab.interactivestudios.nl",
+	"gitlens.keymap": "chorded",
+	"window.zoomLevel": 0
+}
