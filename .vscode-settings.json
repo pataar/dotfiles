@@ -82,6 +82,5 @@
 		"cfml",
 		"HTML (Eex)"
 	],
-	// Indent lines with tabs
 	"prettier.useTabs": true
 }
