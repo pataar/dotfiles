@@ -1,3 +1,4 @@
+#!/bin/bash
 code --install-extension Angular.ng-template
 code --install-extension CoenraadS.bracket-pair-colorizer
 code --install-extension PKief.material-icon-theme
