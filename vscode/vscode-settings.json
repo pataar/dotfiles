@@ -60,7 +60,6 @@
 		]
 	},
 	"git.autofetch": true,
-	"gitlab.instanceUrl": "https://gitlab.interactivestudios.nl",
 	"gitlens.keymap": "chorded",
 	"window.zoomLevel": 0,
 	"gitlens.historyExplorer.enabled": true,
@@ -82,5 +81,11 @@
 		"cfml",
 		"HTML (Eex)"
 	],
-	"prettier.useTabs": true
+
+	"prettier.useTabs": true,
+	"prettier.jsxBracketSameLine": true,
+	"prettier.printWidth": 150,
+
+	"typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+	"javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
 }
