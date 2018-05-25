@@ -1,7 +1,10 @@
 #zmodload zsh/zprof
 DISABLE_UPDATE_PROMPT=true
+
+export DEFAULT_USER=$(whoami)
+
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/pieter/.oh-my-zsh
+export ZSH=/Users/$DEFAULT_USER/.oh-my-zsh
 
 ZSH_THEME="taybalt-custom"
 
@@ -40,10 +43,9 @@ export PATH="/usr/local/opt/php@7.0/sbin:$PATH"
 export PATH=${PATH}:/usr/local/sbin:/devtools/android-sdk-macosx/platform-tools:/devtools/android-sdk-macosx/tools:~/.composer/vendor/bin
 
 fpath=(/usr/local/share/zsh-completions $fpath)
-export DEFAULT_USER="pieter"
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export PATH=$PATH:"/users/pieter/.config/yarn/global/node_modules/.bin"
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/Users/pieter/bin
+export PATH=$PATH:"/users/$DEFAULT_USER/.config/yarn/global/node_modules/.bin"
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/Users/$DEFAULT_USER/bin
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 eval "$(rbenv init -)"
