@@ -1,9 +1,14 @@
 # Taps
-tap 'caskroom/cask'
-tap 'caskroom/versions'
-tap 'homebrew/dupes'
-tap 'homebrew/php'
-tap 'homebrew/apache'
+tap "homebrew/dupes"
+tap "homebrew/apache"
+tap "homebrew/core"
+tap "homebrew/php"
+tap "homebrew/versions"
+tap "homebrew/boneyard"
+tap "homebrew/bundle"
+tap "homebrew/services"
+tap "getsentry/tools"
+tap "caskroom/cask"
 
 # Make sure apps get installed in system Applications dir
 cask_args appdir: '/Applications'
@@ -11,6 +16,7 @@ cask_args appdir: '/Applications'
 # Install ZSH
 brew 'zsh'
 brew 'zsh-completions'
+brew 'zsh-git-prompt'
 brew 'zsh-syntax-highlighting'
 
 # Install GNU core utilities (those that come with OS X are outdated)
@@ -18,9 +24,6 @@ brew 'coreutils'
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew 'findutils'
-
-# Install Bash 4
-brew 'bash'
 
 # Install more recent versions of some OS X tools
 brew 'homebrew/dupes/grep'
@@ -31,29 +34,29 @@ brew 'imagemagick'
 brew 'memcached'
 brew 'libmemcached'
 brew 'nano'
-brew 'node'
 brew 'openssl'
+brew "redis", restart_service: true
 brew 'rbenv'
 brew 'ruby-build'
 brew 'wget'
 brew 'whois'
 brew 'xctool'
-brew 'yarn'
 
 # Install PHP stuff
-brew 'php70'
-brew 'php70-mcrypt'
-brew 'php70-memcached'
-brew 'php70-imagick'
-brew 'php70-xdebug'
-brew 'php70-opcache'
-brew 'mysql'
-brew 'httpd24'
+brew "mariadb", restart_service: true
+brew 'httpd'
+brew 'php@7.0'
+
+# Install Frontend stuff
+brew 'node'
+brew 'yarn'
 
 # Apps
 cask 'aerial'
-cask 'atom'
+cask 'alfred'
+cask 'visual-studio-code'
 cask 'iterm2'
+cask 'enpass'
 cask 'phpstorm'
 cask 'slack'
 cask 'spotify'
@@ -61,8 +64,6 @@ cask 'google-chrome'
 cask 'sourcetree'
 cask 'java'
 cask 'google-chrome'
-
-brew 'android-sdk'
 
 # Quicklook
 cask 'qlcolorcode'
