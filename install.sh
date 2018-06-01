@@ -24,6 +24,7 @@ fi
 # Install Composer
 if test ! $(which composer); then
   wget https://raw.githubusercontent.com/composer/getcomposer.org/master/web/installer -O - -q | php -- --quiet
+  mv ./composer.phar /usr/local/bin/composer
 fi
 
 if test ! $(which upgrade_oh_my_zsh); then
@@ -39,11 +40,18 @@ open ./iterm/monokai-remastered.itermocolors
 
 xcode-select --install
 
+## Install the correct ruby version using rbenv
 if test $(which rbenv); then
   rbenv install 2.3.0
   rbenv global 2.3.0
 fi
 
+## Install code extensions
+if test $(which code); then
+  sh ./vscode/vscode-extensions.sh
+fi
+
+## Install NPM dependencies and the correct registry
 if test $(which npm); then
   npm install -g cordova ionic
   npm set registry https://gitlab.interactivestudios.nl:4873
