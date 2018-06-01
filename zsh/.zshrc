@@ -8,7 +8,6 @@ export ZSH=/Users/$DEFAULT_USER/.oh-my-zsh
 
 ZSH_THEME="taybalt-custom"
 
-
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"

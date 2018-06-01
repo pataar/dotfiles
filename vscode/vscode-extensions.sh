@@ -8,7 +8,6 @@ code --install-extension dbaeumer.vscode-eslint
 code --install-extension eamodio.gitlens
 code --install-extension eg2.tslint
 code --install-extension eg2.vscode-npm-script
-code --install-extension esbenp.prettier-vscode
 code --install-extension felixfbecker.php-intellisense
 code --install-extension formulahendry.auto-close-tag
 code --install-extension formulahendry.auto-rename-tag

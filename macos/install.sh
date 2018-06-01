@@ -1,4 +1,5 @@
 #!/bin/sh
+# Orginally by driesvints. Edited by Pataar
 
 echo "Setting up your Mac..."
 
@@ -12,7 +13,7 @@ brew update
 
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
-brew bundle
+brew bundle --file=./macos/Brewfile
 
 # Make ZSH the default shell environment
 
@@ -30,8 +31,11 @@ if test $(which upgrade_oh_my_zsh); then
 fi
 
 cp ../zsh/.zshrc ~/.zshrc
+cp ../zsh/taybalt-custom.zsh-theme ~/.oh-my-zsh/themes/taybalt-custom.zsh-theme
 
 source ~/.zshrc
+
+open ../iterm/monokai-remastered.itermocolors
 
 xcode-select --install
 
