@@ -44,7 +44,8 @@ if test ! $(which upgrade_oh_my_zsh); then
 fi
 
 echo "${COLORED}Installing .zshrc stuff...${NC}"
-cp ./zsh/.zshrc ~/.zshrc
+cp ./zsh/.zshrc ~/
+cp ./mackup/.mackup.cfg ~/
 cp ./zsh/taybalt-custom.zsh-theme ~/.oh-my-zsh/themes/taybalt-custom.zsh-theme
 
 source ~/.zshrc
