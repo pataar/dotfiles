@@ -36,7 +36,7 @@ cp ./zsh/taybalt-custom.zsh-theme ~/.oh-my-zsh/themes/taybalt-custom.zsh-theme
 
 source ~/.zshrc
 
-open ./iterm/monokai-remastered.itermocolors
+open ./iterm/monokai-remastered.itermcolors
 
 xcode-select --install
 
