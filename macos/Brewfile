@@ -1,9 +1,5 @@
 # Taps
-tap "homebrew/dupes"
-tap "homebrew/apache"
 tap "homebrew/core"
-tap "homebrew/php"
-tap "homebrew/versions"
 tap "homebrew/boneyard"
 tap "homebrew/bundle"
 tap "homebrew/services"
@@ -25,8 +21,6 @@ brew 'coreutils'
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew 'findutils'
 
-# Install more recent versions of some OS X tools
-brew 'homebrew/dupes/grep'
 
 # Install Binaries
 brew 'git'
@@ -40,7 +34,6 @@ brew 'rbenv'
 brew 'ruby-build'
 brew 'wget'
 brew 'whois'
-brew 'xctool'
 
 # Install PHP stuff
 brew "mariadb", restart_service: true
@@ -63,7 +56,6 @@ cask 'spotify'
 cask 'google-chrome'
 cask 'sourcetree'
 cask 'java'
-cask 'google-chrome'
 
 # Quicklook
 cask 'qlcolorcode'
