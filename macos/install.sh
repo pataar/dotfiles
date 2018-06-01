@@ -29,7 +29,7 @@ if test $(which upgrade_oh_my_zsh); then
  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
-cp ./zsh/.zshrc ~/.zshrc
+cp ../zsh/.zshrc ~/.zshrc
 
 source ~/.zshrc
 
