@@ -21,11 +21,15 @@ if test $(which zsh); then
 fi
 
 # Install Composer
-wget https://raw.githubusercontent.com/composer/getcomposer.org/master/web/installer -O - -q | php -- --quiet
+if test $(which composer); then
+  wget https://raw.githubusercontent.com/composer/getcomposer.org/master/web/installer -O - -q | php -- --quiet
+fi
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+if test $(which upgrade_oh_my_zsh); then
+ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
 
-cp ./zsh/.zshrc ~/.zshrc
+cp ../zsh/.zshrc ~/.zshrc
 
 source ~/.zshrc
 
