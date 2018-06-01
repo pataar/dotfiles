@@ -17,16 +17,16 @@ brew bundle --file=./macos/Brewfile
 
 # Make ZSH the default shell environment
 
-if test $(which zsh); then
+if test ! $(which zsh); then
   chsh -s $(which zsh)
 fi
 
 # Install Composer
-if test $(which composer); then
+if test ! $(which composer); then
   wget https://raw.githubusercontent.com/composer/getcomposer.org/master/web/installer -O - -q | php -- --quiet
 fi
 
-if test $(which upgrade_oh_my_zsh); then
+if test ! $(which upgrade_oh_my_zsh); then
  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
