@@ -73,3 +73,8 @@ if test $(which npm); then
   npm install -g cordova ionic
   npm set registry https://gitlab.interactivestudios.nl:4873
 fi
+
+echo "${COLORED}If you want to restore the mackup backup use: 'mackup restore'...${NC}"
+
+echo "\033[0;36m| Done installing. | "
+
