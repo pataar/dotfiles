@@ -30,12 +30,12 @@ if test $(which upgrade_oh_my_zsh); then
  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
-cp ../zsh/.zshrc ~/.zshrc
-cp ../zsh/taybalt-custom.zsh-theme ~/.oh-my-zsh/themes/taybalt-custom.zsh-theme
+cp ./zsh/.zshrc ~/.zshrc
+cp ./zsh/taybalt-custom.zsh-theme ~/.oh-my-zsh/themes/taybalt-custom.zsh-theme
 
 source ~/.zshrc
 
-open ../iterm/monokai-remastered.itermocolors
+open ./iterm/monokai-remastered.itermocolors
 
 xcode-select --install
 
