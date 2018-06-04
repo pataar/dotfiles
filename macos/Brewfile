@@ -5,6 +5,7 @@ tap "homebrew/bundle"
 tap "homebrew/services"
 tap "getsentry/tools"
 tap "caskroom/cask"
+tap "caskroom/fonts"
 
 # Make sure apps get installed in system Applications dir
 cask_args appdir: '/Applications'
@@ -43,6 +44,9 @@ brew 'php@7.0'
 # Install Frontend stuff
 brew 'node'
 brew 'yarn'
+
+# Fonts
+cask 'font-fira-code'
 
 # Apps
 cask 'aerial'
