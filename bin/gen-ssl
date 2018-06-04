@@ -1,0 +1,38 @@
+#!/bin/bash
+
+mkdir -p /usr/local/etc/ssl/
+
+cat > /tmp/ssl_openssl.cnf <<-EOF
+  [req]
+  distinguished_name = req_distinguished_name
+  x509_extensions = v3_req
+  prompt = no
+  [req_distinguished_name]
+  CN = *.$1.local
+  [v3_req]
+  keyUsage = keyEncipherment, dataEncipherment
+  extendedKeyUsage = serverAuth
+  subjectAltName = @alt_names
+  [alt_names]
+  DNS.1 = *.$1.local
+  DNS.2 = *.$1.local
+  DNS.3 = $1.local
+EOF
+
+openssl req \
+  -new \
+  -newkey rsa:2048 \
+  -sha1 \
+  -days 3650 \
+  -nodes \
+  -x509 \
+  -keyout /usr/local/etc/ssl/$1.key \
+  -out /usr/local/etc/ssl/$1.crt \
+  -config /tmp/ssl_openssl.cnf
+
+rm /tmp/ssl_openssl.cnf
+echo "Might needed to enter your sudo password for \`add-trusted-cert\` to work."
+
+sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain /usr/local/etc/ssl/$1.crt
+
+echo "Created SSL files for $1.local in /usr/local/etc/ssl"

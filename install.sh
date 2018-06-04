@@ -47,6 +47,7 @@ echo "${COLORED}Installing .zshrc stuff...${NC}"
 cp ./zsh/.zshrc ~/
 cp ./mackup/.mackup.cfg ~/
 cp ./zsh/taybalt-custom.zsh-theme ~/.oh-my-zsh/themes/taybalt-custom.zsh-theme
+cp -r ./bin/ /usr/local/bin/
 
 source ~/.zshrc
 
