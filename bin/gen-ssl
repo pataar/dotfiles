@@ -1,6 +1,7 @@
 #!/bin/bash
 # Creates self-signed certificates for a domain. 
 # Usage: `gen-ssl test` -> creates certificates for test.local in /usr/local/etc/ssl.
+# Thanks to @koenvanzuijlen
 
 mkdir -p /usr/local/etc/ssl/
 
