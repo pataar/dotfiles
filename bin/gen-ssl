@@ -1,5 +1,5 @@
 #!/bin/bash
-# Creates self-signed certificates for a domain. 
+# Creates self-signed certificates for a domain.
 # Usage: `gen-ssl test` -> creates certificates for test.local in /usr/local/etc/ssl.
 # Thanks to @koenvanzuijlen
 
@@ -39,3 +39,7 @@ echo "Might needed to enter your sudo password for \`add-trusted-cert\` to work.
 sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain /usr/local/etc/ssl/$1.crt
 
 echo "Created SSL files for $1.local in /usr/local/etc/ssl"
+echo "Apache config:"
+echo "SSLEngine on
+SSLCertificateFile \"/usr/local/etc/ssl/$1.crt\"
+SSLCertificateKeyFile \"/usr/local/etc/ssl/$1.key\""
