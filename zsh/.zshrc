@@ -15,7 +15,12 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/.composer/vend
 
 source $ZSH/oh-my-zsh.sh
 
+
 alias art="php artisan"
+alias c="code"
+alias "c."="c ."
+alias n="nano"
+alias y="yarn"
 alias reloadcli="source $HOME/.zshrc"
 alias weather="curl -4 http://wttr.in"
 alias prune-branches="/usr/local/bin/git fetch --prune;/usr/local/bin/git branch --merged | grep \"/\" | grep -v \"*\" | xargs -n 1 /usr/local/bin/git branch -d"
