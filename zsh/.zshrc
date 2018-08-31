@@ -1,12 +1,57 @@
 #zmodload zsh/zprof
 DISABLE_UPDATE_PROMPT=true
-
-export DEFAULT_USER=$(whoami)
-
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/$DEFAULT_USER/.oh-my-zsh
+export ZSH=/Users/pieter/.oh-my-zsh
 
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
 ZSH_THEME="taybalt-custom"
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(colorize git git-extras osx)
 
 # User configuration
 
@@ -15,15 +60,26 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/.composer/vend
 
 source $ZSH/oh-my-zsh.sh
 
-
+# Aliases
 alias art="php artisan"
+
 alias c="code"
 alias "c."="c ."
+
+alias ci="composer install"
+alias cdu="composer du"
+
 alias n="nano"
-alias y="yarn"
-alias reloadcli="source $HOME/.zshrc"
-alias weather="curl -4 http://wttr.in"
+alias ni="npm install"
 alias prune-branches="/usr/local/bin/git fetch --prune;/usr/local/bin/git branch --merged | grep \"/\" | grep -v \"*\" | xargs -n 1 /usr/local/bin/git branch -d"
+alias reloadcli="source $HOME/.zshrc"
+
+alias weather="curl -4 http://wttr.in"
+
+alias y="yarn"
+alias yw="yarn watch"
+alias yb="yarn build"
+alias yh="yarn hot"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -46,10 +102,13 @@ export PATH="/usr/local/opt/php@7.0/bin:$PATH"
 export PATH="/usr/local/opt/php@7.0/sbin:$PATH"
 export PATH=${PATH}:/usr/local/sbin:/devtools/android-sdk-macosx/platform-tools:/devtools/android-sdk-macosx/tools:~/.composer/vendor/bin
 
+export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
 fpath=(/usr/local/share/zsh-completions $fpath)
+export DEFAULT_USER="pieter"
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export PATH=$PATH:"/users/$DEFAULT_USER/.config/yarn/global/node_modules/.bin"
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/Users/$DEFAULT_USER/bin
+export PATH=$PATH:"/users/pieter/.config/yarn/global/node_modules/.bin"
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/Users/pieter/bin
+#export PATH=$PATH:"$(yarn global bin)"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 eval "$(rbenv init -)"
@@ -57,3 +116,9 @@ eval "$(rbenv init -)"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 ulimit -n 2048
+#ozprof
+
+# Go development
+export GOPATH="${HOME}/.go"
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
