@@ -23,11 +23,12 @@ brew 'coreutils'
 brew 'findutils'
 
 # Install Binaries
+brew 'bat'
+brew 'diff-so-fancy'
 brew 'git'
 brew 'imagemagick'
 brew 'memcached'
 brew 'libmemcached'
-brew 'mackup'
 brew 'nano'
 brew 'openssl'
 brew "redis", restart_service: true

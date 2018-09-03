@@ -1,0 +1,15 @@
+[core]
+	editor = nano
+[user]
+	name = pataar
+[push]
+	default = simple
+[gpg]
+	program = gpg
+[alias]
+	git = !exec git
+[color]
+	ui = true
+[pager]
+       diff = diff-so-fancy | less --tabs=1,5 -RFX
+       show = diff-so-fancy | less --tabs=1,5 -RFX

@@ -44,8 +44,8 @@ if test ! $(which upgrade_oh_my_zsh); then
 fi
 
 echo "${COLORED}Installing .zshrc stuff...${NC}"
+cp ./git/.gitconfig ~/
 cp ./zsh/.zshrc ~/
-cp ./mackup/.mackup.cfg ~/
 cp ./zsh/taybalt-custom.zsh-theme ~/.oh-my-zsh/themes/taybalt-custom.zsh-theme
 cp -r ./bin/ /usr/local/bin/
 
@@ -75,7 +75,4 @@ if test $(which npm); then
   npm set registry https://gitlab.interactivestudios.nl:4873
 fi
 
-echo "${COLORED}If you want to restore the mackup backup use: 'mackup restore'...${NC}"
-
 echo "\033[0;36m| Done installing. | "
-
