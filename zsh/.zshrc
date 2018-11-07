@@ -19,6 +19,8 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 alias art="php artisan"
 
+alias cat="bat"
+
 alias c="code"
 alias "c."="c ."
 
