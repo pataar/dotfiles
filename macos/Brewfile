@@ -51,6 +51,7 @@ cask 'font-fira-code'
 
 # Apps
 cask '1password'
+cask 'aerial'
 cask 'alfred'
 cask 'visual-studio-code'
 cask 'iterm2'
