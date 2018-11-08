@@ -50,17 +50,18 @@ brew 'yarn'
 cask 'font-fira-code'
 
 # Apps
-cask 'aerial'
+cask '1password'
 cask 'alfred'
 cask 'visual-studio-code'
 cask 'iterm2'
-cask 'enpass'
 cask 'phpstorm'
 cask 'slack'
 cask 'spotify'
 cask 'google-chrome'
 cask 'sourcetree'
 cask 'java'
+cask 'flux'
+cask 'whatsapp'
 
 # Quicklook
 cask 'qlcolorcode'
