@@ -7,26 +7,75 @@
   </option>
   <CssCodeStyleSettings>
     <option name="HEX_COLOR_LOWER_CASE" value="true" />
-    <option name="VALUE_ALIGNMENT" value="2" />
   </CssCodeStyleSettings>
+  <HTMLCodeStyleSettings>
+    <option name="HTML_TEXT_WRAP" value="0" />
+    <option name="HTML_ENFORCE_QUOTES" value="true" />
+  </HTMLCodeStyleSettings>
   <JSCodeStyleSettings>
-    <option name="ALIGN_OBJECT_PROPERTIES" value="1" />
-    <option name="ALIGN_VAR_STATEMENTS" value="2" />
+    <option name="FORCE_SEMICOLON_STYLE" value="true" />
     <option name="SPACE_BEFORE_FUNCTION_LEFT_PARENTH" value="false" />
+    <option name="FORCE_QUOTE_STYlE" value="true" />
+    <option name="ENFORCE_TRAILING_COMMA" value="WhenMultiline" />
+    <option name="JSX_ATTRIBUTE_VALUE" value="Based on type" />
+    <option name="VAR_DECLARATION_WRAP" value="5" />
+    <option name="SPACES_WITHIN_OBJECT_LITERAL_BRACES" value="true" />
+    <option name="SPACES_WITHIN_IMPORTS" value="true" />
     <option name="USE_CHAINED_CALLS_GROUP_INDENTS" value="true" />
+    <option name="IMPORT_SORT_MODULE_NAME" value="true" />
   </JSCodeStyleSettings>
+  <JSON>
+    <option name="OBJECT_WRAPPING" value="5" />
+    <option name="ARRAY_WRAPPING" value="5" />
+  </JSON>
   <PHPCodeStyleSettings>
-    <option name="ALIGN_KEY_VALUE_PAIRS" value="true" />
-    <option name="ALIGN_PHPDOC_PARAM_NAMES" value="true" />
-    <option name="ALIGN_PHPDOC_COMMENTS" value="true" />
-    <option name="ALIGN_ASSIGNMENTS" value="true" />
+    <option name="COMMA_AFTER_LAST_ARRAY_ELEMENT" value="true" />
     <option name="LOWER_CASE_BOOLEAN_CONST" value="true" />
     <option name="LOWER_CASE_NULL_CONST" value="true" />
-    <option name="ELSE_IF_STYLE" value="SEPARATE" />
-    <option name="BLANK_LINES_BEFORE_RETURN_STATEMENT" value="1" />
     <option name="KEEP_RPAREN_AND_LBRACE_ON_ONE_LINE" value="true" />
-    <option name="ALIGN_CLASS_CONSTANTS" value="true" />
+    <option name="KEEP_BLANK_LINES_AFTER_LBRACE" value="1" />
+    <option name="SPACE_BEFORE_CLOSURE_LEFT_PARENTHESIS" value="false" />
+    <option name="FORCE_SHORT_DECLARATION_ARRAY_STYLE" value="true" />
+    <option name="SPACE_AROUND_ASSIGNMENT_IN_DECLARE" value="true" />
   </PHPCodeStyleSettings>
+  <SqlCodeStyleSettings version="0">
+    <option name="myVersion" value="0" />
+    <option name="DISABLE_FORMATTING" value="true" />
+    <option name="ALIAS_CASE" value="4" />
+    <option name="TYPE_CASE" value="3" />
+    <option name="SET_EL_WRAP" value="0" />
+    <option name="SET_EL_COMMA" value="0" />
+    <option name="WITH_EL_WRAP" value="0" />
+    <option name="WITH_EL_COMMA" value="0" />
+    <option name="SELECT_EL_WRAP" value="0" />
+    <option name="FROM_EL_WRAP" value="0" />
+    <option name="WHERE_EL_WRAP" value="0" />
+    <option name="WHERE_EL_BOUND" value="2" />
+    <option name="ORDER_EL_WRAP" value="0" />
+    <option name="CORTEGE_SPACE_BEFORE_L_PAREN" value="false" />
+    <option name="EXPR_CASE_WHEN_WRAP" value="false" />
+    <option name="EXPR_CASE_THEN_WRAP" value="true" />
+    <option name="PRIMARY_KEY_NAME_TEMPLATE" value="{table}_{columns}_pk" />
+    <option name="WRAP_INSIDE_CREATE_TABLE" value="5" />
+    <option name="WRAP_INSIDE_SELECT" value="5" />
+    <option name="WRAP_INSIDE_JOIN_EXPRESSION" value="5" />
+    <option name="WRAP_INSIDE_GROUP_BY" value="5" />
+    <option name="WRAP_INSIDE_WHERE" value="0" />
+    <option name="WRAP_INSIDE_ORDER_BY" value="0" />
+    <option name="WRAP_INSIDE_SET" value="5" />
+  </SqlCodeStyleSettings>
+  <TypeScriptCodeStyleSettings>
+    <option name="FORCE_SEMICOLON_STYLE" value="true" />
+    <option name="SPACE_BEFORE_FUNCTION_LEFT_PARENTH" value="false" />
+    <option name="FORCE_QUOTE_STYlE" value="true" />
+    <option name="ENFORCE_TRAILING_COMMA" value="WhenMultiline" />
+    <option name="VAR_DECLARATION_WRAP" value="5" />
+    <option name="SPACES_WITHIN_OBJECT_LITERAL_BRACES" value="true" />
+    <option name="SPACES_WITHIN_IMPORTS" value="true" />
+    <option name="USE_CHAINED_CALLS_GROUP_INDENTS" value="true" />
+    <option name="BLANK_LINES_AROUND_FUNCTION" value="0" />
+    <option name="IMPORT_SORT_MODULE_NAME" value="true" />
+  </TypeScriptCodeStyleSettings>
   <XML>
     <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
   </XML>
@@ -65,14 +114,18 @@
   <codeStyleSettings language="JavaScript">
     <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
     <option name="ALIGN_MULTILINE_CHAINED_METHODS" value="true" />
-    <option name="ALIGN_MULTILINE_BINARY_OPERATION" value="true" />
+    <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
+    <option name="ALIGN_MULTILINE_FOR" value="false" />
     <option name="ALIGN_MULTILINE_TERNARY_OPERATION" value="true" />
     <option name="ALIGN_MULTILINE_ARRAY_INITIALIZER_EXPRESSION" value="true" />
-    <option name="SPACE_BEFORE_IF_PARENTHESES" value="false" />
-    <option name="SPACE_BEFORE_WHILE_PARENTHESES" value="false" />
-    <option name="SPACE_BEFORE_FOR_PARENTHESES" value="false" />
-    <option name="SPACE_BEFORE_CATCH_PARENTHESES" value="false" />
-    <option name="SPACE_BEFORE_SWITCH_PARENTHESES" value="false" />
+    <option name="ARRAY_INITIALIZER_WRAP" value="5" />
+    <option name="ARRAY_INITIALIZER_LBRACE_ON_NEXT_LINE" value="true" />
+    <option name="ARRAY_INITIALIZER_RBRACE_ON_NEXT_LINE" value="true" />
+    <option name="IF_BRACE_FORCE" value="3" />
+    <option name="DOWHILE_BRACE_FORCE" value="3" />
+    <option name="WHILE_BRACE_FORCE" value="3" />
+    <option name="FOR_BRACE_FORCE" value="3" />
+    <option name="SOFT_MARGINS" value="120" />
     <indentOptions>
       <option name="USE_TAB_CHARACTER" value="true" />
     </indentOptions>
@@ -84,18 +137,28 @@
     </indentOptions>
   </codeStyleSettings>
   <codeStyleSettings language="PHP">
+    <option name="LINE_COMMENT_AT_FIRST_COLUMN" value="false" />
+    <option name="LINE_COMMENT_ADD_SPACE" value="true" />
+    <option name="KEEP_BLANK_LINES_IN_DECLARATIONS" value="1" />
+    <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
+    <option name="KEEP_BLANK_LINES_BEFORE_RBRACE" value="1" />
+    <option name="BLANK_LINES_BEFORE_PACKAGE" value="0" />
+    <option name="BLANK_LINES_AFTER_PACKAGE" value="1" />
     <option name="CLASS_BRACE_STYLE" value="1" />
     <option name="METHOD_BRACE_STYLE" value="1" />
     <option name="SPECIAL_ELSE_IF_TREATMENT" value="true" />
-    <option name="ALIGN_MULTILINE_EXTENDS_LIST" value="true" />
-    <option name="ALIGN_GROUP_FIELD_DECLARATIONS" value="true" />
+    <option name="ALIGN_MULTILINE_ARRAY_INITIALIZER_EXPRESSION" value="true" />
     <option name="SPACE_BEFORE_IF_PARENTHESES" value="false" />
     <option name="SPACE_BEFORE_WHILE_PARENTHESES" value="false" />
     <option name="SPACE_BEFORE_FOR_PARENTHESES" value="false" />
     <option name="SPACE_BEFORE_CATCH_PARENTHESES" value="false" />
     <option name="SPACE_BEFORE_SWITCH_PARENTHESES" value="false" />
+    <option name="METHOD_CALL_CHAIN_WRAP" value="1" />
     <option name="KEEP_SIMPLE_METHODS_IN_ONE_LINE" value="true" />
-    <option name="IF_BRACE_FORCE" value="1" />
+    <option name="IF_BRACE_FORCE" value="3" />
+    <option name="DOWHILE_BRACE_FORCE" value="3" />
+    <option name="WHILE_BRACE_FORCE" value="3" />
+    <option name="FOR_BRACE_FORCE" value="3" />
     <indentOptions>
       <option name="USE_TAB_CHARACTER" value="true" />
     </indentOptions>
@@ -114,6 +177,13 @@
       <option name="USE_TAB_CHARACTER" value="true" />
     </indentOptions>
   </codeStyleSettings>
+  <codeStyleSettings language="SQL">
+    <indentOptions>
+      <option name="INDENT_SIZE" value="4" />
+      <option name="TAB_SIZE" value="4" />
+      <option name="USE_TAB_CHARACTER" value="true" />
+    </indentOptions>
+  </codeStyleSettings>
   <codeStyleSettings language="Twig">
     <indentOptions>
       <option name="CONTINUATION_INDENT_SIZE" value="4" />
@@ -121,6 +191,24 @@
     </indentOptions>
   </codeStyleSettings>
   <codeStyleSettings language="TypeScript">
+    <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
+    <option name="BLANK_LINES_AFTER_IMPORTS" value="0" />
+    <option name="BLANK_LINES_AROUND_CLASS" value="0" />
+    <option name="BLANK_LINES_AROUND_METHOD" value="0" />
+    <option name="BLANK_LINES_AROUND_METHOD_IN_INTERFACE" value="0" />
+    <option name="ALIGN_MULTILINE_CHAINED_METHODS" value="true" />
+    <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
+    <option name="ALIGN_MULTILINE_FOR" value="false" />
+    <option name="ALIGN_MULTILINE_TERNARY_OPERATION" value="true" />
+    <option name="ALIGN_MULTILINE_ARRAY_INITIALIZER_EXPRESSION" value="true" />
+    <option name="ARRAY_INITIALIZER_WRAP" value="5" />
+    <option name="ARRAY_INITIALIZER_LBRACE_ON_NEXT_LINE" value="true" />
+    <option name="ARRAY_INITIALIZER_RBRACE_ON_NEXT_LINE" value="true" />
+    <option name="IF_BRACE_FORCE" value="3" />
+    <option name="DOWHILE_BRACE_FORCE" value="3" />
+    <option name="WHILE_BRACE_FORCE" value="3" />
+    <option name="FOR_BRACE_FORCE" value="3" />
+    <option name="SOFT_MARGINS" value="120" />
     <indentOptions>
       <option name="USE_TAB_CHARACTER" value="true" />
     </indentOptions>
