@@ -72,6 +72,7 @@
 		"jinja",
 		"javascript",
 		"javascriptreact",
+		"typescriptreact",
 		"markdown",
 		"vue",
 		"liquid",
@@ -85,6 +86,33 @@
 	"prettier.jsxBracketSameLine": true,
 	"prettier.printWidth": 150,
 
+	"autoimport.doubleQuotes": true,
+	"autoimport.filesToScan": "**/*.{ts,tsx,js,jsx}",
+	"extensions.ignoreRecommendations": true,
+
 	"typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
 	"javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+	"breadcrumbs.enabled": true,
+
+	"files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+        "**/vendor/**": true,
+        "backup/**": true,
+        "bin/**": true,
+        "cache/**": true,
+        "instances/**": true,
+        "images/**": true,
+        "logs/**": true,
+        "tmp/**": true,
+        "webserver-configs/**": true
+	},
+	"gitlens.remotes": [
+		{
+			"domain": "gitlab.interactivestudios.nl",
+			"type": "GitLab"
+		}
+	],
+	"typescriptHero.imports.stringQuoteStyle": "\""
 }
