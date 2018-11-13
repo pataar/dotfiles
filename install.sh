@@ -75,4 +75,10 @@ if test $(which npm); then
   npm set registry https://gitlab.interactivestudios.nl:4873
 fi
 
+if test $(which php); then
+  pecl install xdebug
+  pecl install imagick
+  pecl install redis
+fi
+
 echo "\033[0;36m| Done installing. | "
