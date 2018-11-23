@@ -7,12 +7,10 @@ export ZSH=/Users/$DEFAULT_USER/.oh-my-zsh
 ZSH_THEME="taybalt-custom"
 
 # Oh-my-zsh plugins
-plugins=(colorize gitfast osx)
+plugins=(colorize gitfast)
 
 # User configuration
-
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -24,6 +22,8 @@ alias "c."="c ."
 
 alias ci="composer install"
 alias cdu="composer du"
+
+alias git_publish="git push -u origin `git rev-parse --abbrev-ref HEAD`"
 
 alias n="nano"
 alias ni="npm install"
@@ -44,19 +44,9 @@ else
   export EDITOR='nano'
 fi
 
-alias alias-help="echo \"restart-services ssh-gitlab brew-upgrade proj-install proj-outdated\""
-alias restart-services="brew services restart mysql && sudo brew services restart httpd24"
-alias ssh-gitlab="ssh root@gitlab.interactivestudios.nl"
-alias brew-upgrade="brew update && brew upgrade"
-alias proj-install="npm install && composer install"
-alias pull-screenshots="adb pull /sdcard/Pictures/Screenshots/ ~/Desktop/Android_Screenshots/"
-alias proj-outdated="npm outdated && npm outdated -g && composer outdated"
-
-#export PATH="$(brew --prefix php@7.0)/bin:$PATH"
-
 export PATH="/usr/local/opt/php@7.0/bin:$PATH"
 export PATH="/usr/local/opt/php@7.0/sbin:$PATH"
-export PATH=${PATH}:/usr/local/sbin:/devtools/android-sdk-macosx/platform-tools:/devtools/android-sdk-macosx/tools:~/.composer/vendor/bin
+export PATH=${PATH}:/usr/local/sbin:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/platform-tools/tools:~/.composer/vendor/bin
 
 export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
 fpath=(/usr/local/share/zsh-completions $fpath)
