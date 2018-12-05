@@ -1,6 +1,6 @@
 {
 	"workbench.iconTheme": "material-icon-theme",
-	"workbench.colorTheme": "Monokai",
+	"workbench.colorTheme": "Monokai Dark Soda",
 	"editor.scrollBeyondLastLine": false,
 	"files.autoSave": "onWindowChange",
 	"files.exclude": {
