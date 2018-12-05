@@ -18,6 +18,7 @@
 	},
 	"editor.fontFamily": "Fira Code",
 	"editor.fontLigatures": true,
+	"workbench.fontAliasing": "auto",
 	"editor.minimap.enabled": false,
 	"workbench.startupEditor": "newUntitledFile",
 	"files.associations": {
@@ -31,7 +32,6 @@
 		"*.twig": "handlebars"
 	},
 	"window.newWindowDimensions": "maximized",
-	"search.useIgnoreFilesByDefault": true,
 	"editor.detectIndentation": false,
 	"editor.insertSpaces": false,
 	"explorer.openEditors.visible": 0,
@@ -62,7 +62,6 @@
 	"git.autofetch": true,
 	"gitlens.keymap": "chorded",
 	"window.zoomLevel": 0,
-	"gitlens.historyExplorer.enabled": true,
 	"explorer.confirmDragAndDrop": false,
 	"auto-close-tag.activationOnLanguage": [
 		"xml",
@@ -114,5 +113,10 @@
 			"type": "GitLab"
 		}
 	],
-	"typescriptHero.imports.stringQuoteStyle": "\""
+	"typescriptHero.imports.stringQuoteStyle": "\"",
+	"gitlens.views.fileHistory.enabled": true,
+	"gitlens.views.lineHistory.enabled": true,
+	"workbench.colorCustomizations": {
+		"statusBar.background": "#333333",
+	}
 }
