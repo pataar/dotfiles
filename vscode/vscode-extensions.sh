@@ -1,4 +1,5 @@
 #!/bin/bash
+code --install-extension AdamCaviness.theme-monokai-dark-soda
 code --install-extension Angular.ng-template
 code --install-extension christian-kohler.path-intellisense
 code --install-extension CoenraadS.bracket-pair-colorizer
