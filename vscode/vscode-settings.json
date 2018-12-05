@@ -116,7 +116,8 @@
 	"typescriptHero.imports.stringQuoteStyle": "\"",
 	"gitlens.views.fileHistory.enabled": true,
 	"gitlens.views.lineHistory.enabled": true,
+
 	"workbench.colorCustomizations": {
-		"statusBar.background": "#333333",
+		"statusBar.background": "#333333"
 	}
 }
