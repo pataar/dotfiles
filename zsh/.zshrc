@@ -23,7 +23,8 @@ alias "c."="c ."
 alias ci="composer install"
 alias cdu="composer du"
 
-alias git_publish="git push -u origin `git rev-parse --abbrev-ref HEAD`"
+alias lmb="lab mr browse"
+alias lmco="lab mr create origin"
 
 alias n="nano"
 alias ni="npm install"
