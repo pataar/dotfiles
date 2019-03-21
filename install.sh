@@ -75,6 +75,12 @@ if test $(which npm); then
   npm set registry https://gitlab.interactivestudios.nl:4873
 fi
 
+## Install NPM dependencies and the correct registry
+if test $(which mkcert); then
+  echo "${COLORED}Installing mkcert stuff...${NC}"
+  mkcert -install
+fi
+
 if test $(which pecl); then
   pecl install xdebug
   pecl install imagick
