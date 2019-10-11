@@ -7,7 +7,7 @@ export ZSH=/Users/$DEFAULT_USER/.oh-my-zsh
 ZSH_THEME="taybalt-custom"
 
 # Oh-my-zsh plugins
-plugins=(colorize gitfast)
+plugins=(git colorize gitfast)
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
@@ -45,8 +45,8 @@ else
   export EDITOR='nano'
 fi
 
-export PATH="/usr/local/opt/php@7.0/bin:$PATH"
-export PATH="/usr/local/opt/php@7.0/sbin:$PATH"
+export PATH="/usr/local/opt/php@7.2/bin:$PATH"
+export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
 export PATH=${PATH}:/usr/local/sbin:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/platform-tools/tools:~/.composer/vendor/bin
 
 export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"

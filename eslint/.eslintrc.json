@@ -22,7 +22,7 @@
 		"ecmaVersion": 9,
 		"sourceType": "module"
 	},
-	"plugins": ["jest"],
+	"plugins": ["jest", "react-hooks"],
 	"rules": {
 		"array-callback-return": "error",
 		"dot-notation": "error",
@@ -32,10 +32,10 @@
 		"no-duplicate-imports": "error",
 		"no-iterator": "error",
 		"no-loop-func": "error",
-		"no-mixed-operators": "error",
 		"no-new-func": "error",
 		"no-new-object": "error",
 		"no-new-wrappers": "error",
+		"no-prototype-builtins": 0,
 		"no-underscore-dangle": "error",
 		"no-unneeded-ternary": "error",
 		"no-useless-concat": "error",
@@ -50,11 +50,16 @@
 		"quote-props": ["error", "as-needed"],
 		"spaced-comment": "error",
 		"react/jsx-curly-brace-presence": ["error", "never"],
-		"react/jsx-boolean-value": ["error", "never"]
+		"react/jsx-boolean-value": ["error", "never"],
+		"react/no-unused-prop-types": 2,
+		"react/no-unused-state": 2,
+		"react-hooks/rules-of-hooks": 2,
+		"react-hooks/exhaustive-deps": 2,
+		"require-atomic-updates": 0
 	},
 	"settings": {
 		"react": {
-			"version": "16.3"
+			"version": "16.8"
 		}
 	}
 }

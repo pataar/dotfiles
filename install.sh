@@ -58,8 +58,8 @@ xcode-select --install
 ## Install the correct ruby version using rbenv
 if test $(which rbenv); then
 echo "${COLORED}Installing Ruby...${NC}"
-  rbenv install 2.3.0
-  rbenv global 2.3.0
+  rbenv install 2.6.1
+  rbenv global 2.6.1
 fi
 
 ## Install code extensions

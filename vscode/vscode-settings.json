@@ -35,7 +35,6 @@
 	"editor.detectIndentation": false,
 	"editor.insertSpaces": false,
 	"explorer.openEditors.visible": 0,
-	"vsicons.projectDetection.disableDetect": true,
 	"files.trimTrailingWhitespace": true,
 	"gitlens.advanced.messages": {
 		"suppressCommitHasNoPreviousCommitWarning": false,
@@ -119,5 +118,12 @@
 
 	"workbench.colorCustomizations": {
 		"statusBar.background": "#333333"
+	},
+	"prettier.tslintIntegration": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.tslint": true
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	}
 }
