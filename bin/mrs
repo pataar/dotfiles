@@ -1,10 +1,19 @@
 #!/bin/bash
 
-if [ $# -ne 3 ]
+if [ $# -lt 2 ]
   then
     echo "Please use it as mrs <branch> <user> <message>"
     exit 1
 fi
-gpsup
-mr_link=`lab mr create origin $1 -a $2 -m $3`
-slack chat send "Hey, $2! Ik heb een MR voor je gemaakt. Heb je tijd? $mr_link" "@$2"
+echo "Creating MR to $1 and assigning it to $2..."
+message=`git log -1 --pretty=%B`
+mr_link=`lab mr create origin $1 -a $2 -m "$message" || exit 1`
+
+if [[ mr_link =~ ^https* ]];
+  then
+  echo "Slacking $2..."
+  slack chat send "Yooo $2, tijd voor een MR? $mr_link" "@$2"  > /dev/null;
+  exit 0;
+fi
+echo "------"
+echo "Error while creating MR"
