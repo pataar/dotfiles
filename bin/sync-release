@@ -1,0 +1,31 @@
+#!/bin/bash
+# @author pataar
+
+if [ $# -lt 1 ]
+  then
+    echo "Please use it as sync-release <release>"
+    exit 1
+fi
+
+release_branch="release/$1"
+
+echo -e "Starting sync for $1..."
+git fetch -p
+echo -e "Pulling develop..."
+git fetch origin develop:develop
+echo -e "Pulling acceptance..."
+git fetch origin acceptance:acceptance
+echo -e "Pulling $release_branch..."
+git fetch origin $release_branch:$release_branch
+echo -e "Merging $release_branch into acceptance..."
+git checkout acceptance
+git merge $release_branch --no-edit
+git checkout -
+echo -e "Merging $release_branch into develop..."
+git checkout develop
+git merge $release_branch--no-edit
+git checkout -
+echo -e "Pushing acceptance..."
+git push origin acceptance:acceptance
+echo -e "Pushing develop..."
+git push origin develop:develop
