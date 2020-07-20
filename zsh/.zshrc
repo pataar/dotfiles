@@ -44,10 +44,8 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='nano'
 fi
-
-export PATH="/usr/local/opt/php@7.2/bin:$PATH"
-export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
-export PATH=${PATH}:/usr/local/sbin:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/platform-tools/tools:~/.composer/vendor/bin
+export ANDROID_SDK_ROOT=~/Library/Android/sdk/
+export PATH=${PATH}:/usr/local/sbin:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/platform-tools/tools:~/Library/Android/sdk/tools
 
 export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
 fpath=(/usr/local/share/zsh-completions $fpath)
