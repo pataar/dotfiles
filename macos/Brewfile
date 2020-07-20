@@ -3,8 +3,8 @@ tap "homebrew/core"
 tap "homebrew/boneyard"
 tap "homebrew/bundle"
 tap "homebrew/services"
-tap "caskroom/cask"
-tap "caskroom/fonts"
+tap "homebrew/cask-cask"
+tap "homebrew/cask-fonts"
 
 # Make sure apps get installed in system Applications dir
 cask_args appdir: '/Applications'
