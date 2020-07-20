@@ -31,13 +31,6 @@ if test $(which zsh); then
   chsh -s $(which zsh)
 fi
 
-# Install Composer
-if test ! $(which composer); then
-  echo "${COLORED}Installing composer...${NC}"
-  wget https://raw.githubusercontent.com/composer/getcomposer.org/master/web/installer -O - -q | php -- --quiet
-  mv ./composer.phar /usr/local/bin/composer
-fi
-
 if test ! $(which upgrade_oh_my_zsh); then
   echo "${COLORED}Installing oh_my_zsh...${NC}"
  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -79,12 +72,6 @@ fi
 if test $(which mkcert); then
   echo "${COLORED}Installing mkcert stuff...${NC}"
   mkcert -install
-fi
-
-if test $(which pecl); then
-  pecl install xdebug
-  pecl install imagick
-  pecl install redis
 fi
 
 echo "\033[0;36m| Done installing. | "

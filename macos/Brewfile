@@ -3,7 +3,6 @@ tap "homebrew/core"
 tap "homebrew/boneyard"
 tap "homebrew/bundle"
 tap "homebrew/services"
-tap "getsentry/tools"
 tap "caskroom/cask"
 tap "caskroom/fonts"
 
@@ -27,10 +26,7 @@ brew 'diff-so-fancy'
 brew 'git'
 brew 'htop'
 brew 'hub'
-brew 'imagemagick'
 brew 'lab'
-brew 'libmemcached'
-brew 'memcached'
 brew 'mkcert'
 brew 'nano'
 brew 'nss'
@@ -44,21 +40,16 @@ brew 'wget'
 brew 'whois'
 brew 'youtube-dl'
 
-# Install PHP stuff
-brew "mariadb", restart_service: true
-brew 'httpd'
-brew 'php@7.2'
-
 # Install Frontend stuff
 brew 'node'
 brew 'yarn'
 
 # Fonts
 cask 'font-fira-code'
+cask 'font-jetbrains-mono'
 
 # Apps
 cask '1password'
-cask 'aerial'
 cask 'alfred'
 cask 'appcleaner'
 cask 'bettertouchtool'
