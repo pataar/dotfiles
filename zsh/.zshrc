@@ -47,7 +47,6 @@ fi
 export ANDROID_SDK_ROOT=~/Library/Android/sdk/
 export PATH=${PATH}:/usr/local/sbin:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/platform-tools/tools:~/Library/Android/sdk/tools
 
-export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
 fpath=(/usr/local/share/zsh-completions $fpath)
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH=$PATH:"/users/$DEFAULT_USER/.config/yarn/global/node_modules/.bin"
