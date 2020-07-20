@@ -62,12 +62,5 @@ cask 'jetbrains-toolbox'
 cask 'slack'
 cask 'spotify'
 cask 'java'
-cask 'flux'
 cask 'visual-studio-code'
 cask 'whatsapp'
-
-# Quicklook
-cask 'qlcolorcode'
-cask 'qlmarkdown'
-cask 'quicklook-csv'
-cask 'qlstephen'

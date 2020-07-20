@@ -32,8 +32,8 @@ if test $(which zsh); then
 fi
 
 if test ! $(which upgrade_oh_my_zsh); then
-  echo "${COLORED}Installing oh_my_zsh...${NC}"
- sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  echo "${COLORED}Installing oh_my_zsh...${NC}" || true
+ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || true
 fi
 
 echo "${COLORED}Installing .zshrc stuff...${NC}"
