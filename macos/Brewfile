@@ -1,9 +1,7 @@
 # Taps
 tap "homebrew/core"
-tap "homebrew/boneyard"
 tap "homebrew/bundle"
 tap "homebrew/services"
-tap "homebrew/cask-cask"
 tap "homebrew/cask-fonts"
 
 # Make sure apps get installed in system Applications dir
