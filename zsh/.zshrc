@@ -7,7 +7,7 @@ export ZSH=/Users/$DEFAULT_USER/.oh-my-zsh
 ZSH_THEME="taybalt-custom"
 
 # Oh-my-zsh plugins
-plugins=(git colorize gitfast)
+plugins=(git colorize gitfast docker docker-compose)
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
@@ -38,15 +38,23 @@ alias yw="yarn watch"
 alias yb="yarn build"
 alias yh="yarn hot"
 
+alias dcu="docker-compose up -d --build"
+alias dcp="docker-compose pull"
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nano'
 else
   export EDITOR='nano'
 fi
-export ANDROID_SDK_ROOT=~/Library/Android/sdk/
-export PATH=${PATH}:/usr/local/sbin:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/platform-tools/tools:~/Library/Android/sdk/tools
 
+
+export ANDROID_SDK_ROOT=~/Library/Android/sdk/
+export PATH="/usr/local/opt/php@7.3/bin:$PATH"
+export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
+export PATH=${PATH}:/usr/local/sbin:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/platform-tools/tools:~/.composer/vendor/bin:~/Library/Android/sdk/tools
+
+export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
 fpath=(/usr/local/share/zsh-completions $fpath)
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH=$PATH:"/users/$DEFAULT_USER/.config/yarn/global/node_modules/.bin"
@@ -64,3 +72,5 @@ ulimit -n 2048
 export GOPATH="${HOME}/.go"
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+
+export PATH="$PATH:${HOME}/.cargo/bin"
