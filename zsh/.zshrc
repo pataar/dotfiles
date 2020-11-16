@@ -7,7 +7,7 @@ export ZSH=/Users/$DEFAULT_USER/.oh-my-zsh
 ZSH_THEME="taybalt-custom"
 
 # Oh-my-zsh plugins
-plugins=(git colorize gitfast docker docker-compose)
+plugins=(git colorize gitfast docker docker-compose zsh-autosuggestions)
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
@@ -28,7 +28,6 @@ alias lmco="lab mr create origin"
 
 alias n="nano"
 alias ni="npm install"
-alias prune-branches="/usr/local/bin/git fetch --prune;/usr/local/bin/git branch --merged | grep \"/\" | grep -v \"*\" | xargs -n 1 /usr/local/bin/git branch -d"
 alias reloadcli="source $HOME/.zshrc"
 
 alias weather="curl -4 http://wttr.in"
@@ -39,6 +38,7 @@ alias yb="yarn build"
 alias yh="yarn hot"
 
 alias dcu="docker-compose up -d --build"
+alias dcep="docker-compose exec php"
 alias dcp="docker-compose pull"
 
 # Preferred editor for local and remote sessions
@@ -74,3 +74,4 @@ export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 export PATH="$PATH:${HOME}/.cargo/bin"
+eval "$(starship init zsh)"
