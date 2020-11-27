@@ -37,7 +37,8 @@ alias yw="yarn watch"
 alias yb="yarn build"
 alias yh="yarn hot"
 
-alias dcu="docker-compose up -d --build"
+alias up="docker-compose up -d --build"
+alias down="docker-compose down -d --build"
 alias dcep="docker-compose exec php"
 alias dcp="docker-compose pull"
 
@@ -48,6 +49,8 @@ else
   export EDITOR='nano'
 fi
 
+export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1
 
 export ANDROID_SDK_ROOT=~/Library/Android/sdk/
 export PATH="/usr/local/opt/php@7.3/bin:$PATH"
@@ -75,3 +78,5 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 export PATH="$PATH:${HOME}/.cargo/bin"
 eval "$(starship init zsh)"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
+
