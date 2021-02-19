@@ -4,7 +4,7 @@ export DEFAULT_USER=$(whoami)
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/$DEFAULT_USER/.oh-my-zsh
 
-ZSH_THEME="taybalt-custom"
+ZSH_THEME="pataar"
 
 # Oh-my-zsh plugins
 plugins=(git colorize gitfast docker docker-compose zsh-autosuggestions)
@@ -39,7 +39,7 @@ alias yh="yarn hot"
 
 alias up="docker-compose up -d --build"
 alias down="docker-compose down -d --build"
-alias dcep="docker-compose exec php"
+alias logf="docker-compose logs -f"
 alias dcp="docker-compose pull"
 
 # Preferred editor for local and remote sessions
@@ -53,13 +53,11 @@ export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 
 export ANDROID_SDK_ROOT=~/Library/Android/sdk/
-export PATH="/usr/local/opt/php@7.3/bin:$PATH"
-export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
 export PATH=${PATH}:/usr/local/sbin:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/platform-tools/tools:~/.composer/vendor/bin:~/Library/Android/sdk/tools
 
-export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
 fpath=(/usr/local/share/zsh-completions $fpath)
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 export PATH=$PATH:"/users/$DEFAULT_USER/.config/yarn/global/node_modules/.bin"
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/Users/$DEFAULT_USER/bin
 
