@@ -1,5 +1,9 @@
 [core]
 	editor = nano
+	excludesfile = /Users/pieter/.gitignore_global
+[user]
+	name = pieter
+	email = pieter@interactivestudios.nl
 [push]
 	default = simple
 [gpg]
@@ -9,5 +13,40 @@
 [color]
 	ui = true
 [pager]
-       diff = diff-so-fancy | less --tabs=1,5 -RFX
-       show = diff-so-fancy | less --tabs=1,5 -RFX
+       diff = delta
+[diff]
+    tool = kdiff3
+[difftool "kdiff3"]
+    path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+    trustExitCode = false
+[merge]
+    tool = kdiff3
+[mergetool "kdiff3"]
+    path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+    trustExitCode = false
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/pieter/.stCommitMsg
+[pull]
+	rebase = false
+[trim]
+	bases = develop
+	protected = acceptance,master
+[http]
+	postBuffer = 524288000
+
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = Monokai Extended
+    navigate = true
+    line-numbers = true
+
+[interactive]
+    diffFilter = delta --color-only

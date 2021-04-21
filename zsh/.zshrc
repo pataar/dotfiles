@@ -1,45 +1,53 @@
-#zmodload zsh/zprof
-DISABLE_UPDATE_PROMPT=true
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Init Znap
+source ~/.zsh-snap/znap.zsh
+
+# Init theme
+znap source romkatv/powerlevel10k
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+zstyle ':znap:*' repos-dir ~/.zsh_plugins
+
 export DEFAULT_USER=$(whoami)
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/$DEFAULT_USER/.oh-my-zsh
 
-ZSH_THEME="pataar"
-
-# Oh-my-zsh plugins
-plugins=(git colorize gitfast docker docker-compose zsh-autosuggestions)
+znap source ohmyzsh/ohmyzsh plugins/git # Git aliases
+znap source ohmyzsh/ohmyzsh plugins/command-not-found # Suggestion when command is not found
+znap source ohmyzsh/ohmyzsh plugins/docker # Suggestion when command is not found
+znap source ohmyzsh/ohmyzsh plugins/docker-compose # Suggestion when command is not found
+znap source zdharma/fast-syntax-highlighting # Syntax highlighting
+znap source zsh-users/zsh-autosuggestions # Autosuggest commands on type
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
 
-source $ZSH/oh-my-zsh.sh
-
+# source $ZSH/oh-my-zsh.sh
 # Aliases
 alias art="php artisan"
-
 alias c="code"
 alias "c."="c ."
-
 alias ci="composer install"
 alias cdu="composer du"
-
 alias lmb="lab mr browse"
 alias lmco="lab mr create origin"
-
 alias n="nano"
 alias ni="npm install"
 alias reloadcli="source $HOME/.zshrc"
-
 alias weather="curl -4 http://wttr.in"
-
 alias y="yarn"
 alias yw="yarn watch"
 alias yb="yarn build"
 alias yh="yarn hot"
-
 alias up="docker-compose up -d --build"
-alias down="docker-compose down -d --build"
-alias logf="docker-compose logs -f"
+alias down="docker-compose down"
+alias dcep="docker-compose exec php"
 alias dcp="docker-compose pull"
 
 # Preferred editor for local and remote sessions
@@ -54,27 +62,20 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 
 export ANDROID_SDK_ROOT=~/Library/Android/sdk/
 export PATH=${PATH}:/usr/local/sbin:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/platform-tools/tools:~/.composer/vendor/bin:~/Library/Android/sdk/tools
-
+export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
 fpath=(/usr/local/share/zsh-completions $fpath)
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 export PATH=$PATH:"/users/$DEFAULT_USER/.config/yarn/global/node_modules/.bin"
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/Users/$DEFAULT_USER/bin
-
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-
 eval "$(rbenv init -)"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 ulimit -n 2048
-
-# Go development
-export GOPATH="${HOME}/.go"
-export GOROOT="$(brew --prefix golang)/libexec"
-export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
-
-export PATH="$PATH:${HOME}/.cargo/bin"
-eval "$(starship init zsh)"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
 
+# NVM stuff
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+eval "$(starship init zsh)"

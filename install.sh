@@ -31,16 +31,13 @@ if test $(which zsh); then
   chsh -s $(which zsh)
 fi
 
-if test ! $(which upgrade_oh_my_zsh); then
-  echo "${COLORED}Installing oh_my_zsh...${NC}" || true
- sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || true
- git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-fi
+git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git ~/.zsh-snap
+source zsh-snap/install.zsh
 
 echo "${COLORED}Installing .zshrc stuff...${NC}"
 cp ./git/.gitconfig ~/
 cp ./zsh/.zshrc ~/
-cp ./zsh/taybalt-custom.zsh-theme ~/.oh-my-zsh/themes/taybalt-custom.zsh-theme
+cp ./zsh/.p10k.zsh ~/
 cp -r ./bin/ /usr/local/bin/
 
 source ~/.zshrc
@@ -54,19 +51,6 @@ if test $(which rbenv); then
 echo "${COLORED}Installing Ruby...${NC}"
   rbenv install 2.6.1
   rbenv global 2.6.1
-fi
-
-## Install code extensions
-if test $(which code); then
-  echo "${COLORED}Installing vscode extensions...${NC}"
-  sh ./vscode/vscode-extensions.sh
-fi
-
-## Install NPM dependencies and the correct registry
-if test $(which npm); then
-  echo "${COLORED}Installing npm stuff...${NC}"
-  npm install -g cordova ionic
-  npm set registry https://gitlab.interactivestudios.nl:4873
 fi
 
 ## Install NPM dependencies and the correct registry
