@@ -19,11 +19,13 @@ zstyle ':znap:*' repos-dir ~/.zsh_plugins
 export DEFAULT_USER=$(whoami)
 
 znap source ohmyzsh/ohmyzsh plugins/git # Git aliases
+znap source ohmyzsh/ohmyzsh plugins/git-prune # Git prune command (gprune)
 znap source ohmyzsh/ohmyzsh plugins/command-not-found # Suggestion when command is not found
 znap source ohmyzsh/ohmyzsh plugins/docker # Suggestion when command is not found
 znap source ohmyzsh/ohmyzsh plugins/docker-compose # Suggestion when command is not found
 znap source zdharma/fast-syntax-highlighting # Syntax highlighting
 znap source zsh-users/zsh-autosuggestions # Autosuggest commands on type
+znap source gko/ssh-connect # Easier SSH management
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
@@ -62,8 +64,6 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 
 export ANDROID_SDK_ROOT=~/Library/Android/sdk/
 export PATH=${PATH}:/usr/local/sbin:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/platform-tools/tools:~/.composer/vendor/bin:~/Library/Android/sdk/tools
-export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
-fpath=(/usr/local/share/zsh-completions $fpath)
 export PATH=$PATH:"/users/$DEFAULT_USER/.config/yarn/global/node_modules/.bin"
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/Users/$DEFAULT_USER/bin
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
@@ -78,4 +78,3 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-eval "$(starship init zsh)"
