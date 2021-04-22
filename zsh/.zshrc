@@ -17,17 +17,17 @@ zstyle ':znap:*' repos-dir ~/.zsh_plugins
 
 export DEFAULT_USER=$(whoami)
 
+alias git_current_branch="git branch --show-current"
+
 znap source ohmyzsh/ohmyzsh plugins/git # Git aliases
 znap source ohmyzsh/ohmyzsh plugins/colorize # Syntax highlighting for catted files
-znap source ohmyzsh/ohmyzsh plugins/git-prune # Git prune command (gprune)
 znap source ohmyzsh/ohmyzsh plugins/command-not-found # Suggestion when command is not found
 znap source ohmyzsh/ohmyzsh plugins/docker # Suggestion when command is not found
 znap source ohmyzsh/ohmyzsh plugins/docker-compose # Suggestion when command is not found
 znap source zdharma/fast-syntax-highlighting # Syntax highlighting
 znap source zsh-users/zsh-autosuggestions # Autosuggest commands on type
 znap source gko/ssh-connect # Easier SSH management
-
-export ZSH_COLORIZE_CHROMA_FORMATTER=terminal256
+znap source diazod/git-prune # Git prune command (gprune)
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
