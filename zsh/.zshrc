@@ -69,7 +69,10 @@ export PATH=${PATH}:/usr/local/sbin:~/Library/Android/sdk/platform-tools:~/Libra
 export PATH=$PATH:"/users/$DEFAULT_USER/.config/yarn/global/node_modules/.bin"
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/Users/$DEFAULT_USER/bin
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-eval "$(rbenv init -)"
+
+if test $(which rbenv); then
+  eval "$(rbenv init -)"
+fi
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
