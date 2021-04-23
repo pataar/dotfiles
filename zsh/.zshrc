@@ -29,9 +29,11 @@ znap source zsh-users/zsh-autosuggestions # Autosuggest commands on type
 znap source gko/ssh-connect # Easier SSH management
 znap source diazod/git-prune # Git prune command (gprune)
 
-HISTFILE="$HOME/.zsh_history"
-HISTSIZE=500000
-SAVEHIST=500000
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt SHARE_HISTORY
+touch $HISTFILE
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
@@ -75,7 +77,7 @@ export PATH=$PATH:"/users/$DEFAULT_USER/.config/yarn/global/node_modules/.bin"
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/Users/$DEFAULT_USER/bin
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-if [ -x rbenv ] then
+if [ -x rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
