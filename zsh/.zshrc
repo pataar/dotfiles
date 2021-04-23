@@ -29,6 +29,10 @@ znap source zsh-users/zsh-autosuggestions # Autosuggest commands on type
 znap source gko/ssh-connect # Easier SSH management
 znap source diazod/git-prune # Git prune command (gprune)
 
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=500000
+SAVEHIST=500000
+
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
 
@@ -53,6 +57,7 @@ alias up="docker-compose up -d --build"
 alias down="docker-compose down"
 alias dcep="docker-compose exec php"
 alias dcp="docker-compose pull"
+alias dupd="dcp && up"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -70,7 +75,7 @@ export PATH=$PATH:"/users/$DEFAULT_USER/.config/yarn/global/node_modules/.bin"
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/Users/$DEFAULT_USER/bin
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-if test $(which rbenv); then
+if [ -x rbenv ] then
   eval "$(rbenv init -)"
 fi
 
