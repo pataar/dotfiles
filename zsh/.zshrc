@@ -74,7 +74,7 @@ export PATH=$PATH:"/users/$DEFAULT_USER/.config/yarn/global/node_modules/.bin"
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/Users/$DEFAULT_USER/bin
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-if [ -x rbenv ]; then
+if [ -x "$(command -v rbenv)" ]; then
   eval "$(rbenv init -)"
 fi
 
@@ -87,3 +87,5 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+source ~/.fastlane_session
