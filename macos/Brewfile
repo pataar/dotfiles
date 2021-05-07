@@ -41,8 +41,7 @@ brew 'whois'
 brew 'youtube-dl'
 
 # Install Frontend stuff
-brew 'node'
-brew 'yarn'
+brew 'volta'
 
 # Fonts
 cask 'font-fira-code'
