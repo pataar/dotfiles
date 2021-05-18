@@ -74,6 +74,10 @@ export PATH=$PATH:"/users/$DEFAULT_USER/.config/yarn/global/node_modules/.bin"
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/Users/$DEFAULT_USER/bin
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
+# Custom keybindings
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+
 if [ -x "$(command -v rbenv)" ]; then
   eval "$(rbenv init -)"
 fi
