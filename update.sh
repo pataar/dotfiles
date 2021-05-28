@@ -5,7 +5,6 @@ NC='\033[0m'
 
 echo "\033[0;36m| dotfiles | @pataar"
 echo "${COLORED}Updating the Mac of $(whoami)...${NC}"
-echo "\n";
 
 cd ~/.zsh-snap && git pull 2>/dev/null && cd -
 
@@ -18,7 +17,6 @@ znap status
 znap pull
 
 echo "${COLORED}Updating .zshrc stuff...${NC}"
-cp ./git/.gitconfig ~/
 cp ./zsh/.zshrc ~/
 cp ./zsh/.p10k.zsh ~/
 
@@ -30,4 +28,3 @@ cp -r ./bin/ /usr/local/bin/
 fi
 
 echo "\033[0;36m| Done updating. | "
-echo "\n";
