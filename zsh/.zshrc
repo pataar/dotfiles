@@ -46,7 +46,7 @@ alias "c."="c ."
 alias ci="composer install"
 alias cdu="composer du"
 alias lmb="lab mr browse"
-alias lmco="glab mr create -b"
+alias lmco="glab mr create --push -b"
 alias n="nano"
 alias ni="npm install"
 alias reloadcli="source $HOME/.zshrc"
@@ -60,6 +60,7 @@ alias down="docker-compose down"
 alias dcep="docker-compose exec php"
 alias dcp="docker-compose pull"
 alias dupd="dcp && up"
+alias gencl=" npx conventional-changelog-cli -p angular -i CHANGELOG.md -s"
 
 # Preferred editor for local and remote sessions
 
