@@ -62,6 +62,12 @@ alias dcp="docker-compose pull"
 alias dupd="dcp && up"
 alias gencl=" npx conventional-changelog-cli -p angular -i CHANGELOG.md -s"
 
+# Glab aliases
+alias mrlist="glab mr list --assignee=@me  --reviewer=@me"
+alias mrdiff="glab mr diff"
+alias mrapprove="glab mr approve"
+alias mrmerge="glab mr merge"
+
 # Preferred editor for local and remote sessions
 
 export EDITOR='nano'
