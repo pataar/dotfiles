@@ -6,6 +6,7 @@
 	email = pieter@interactivestudios.nl
 [push]
 	default = simple
+        followTags = true
 [gpg]
 	program = gpg
 [alias]
