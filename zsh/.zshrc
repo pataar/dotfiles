@@ -24,7 +24,6 @@ znap source ohmyzsh/ohmyzsh plugins/colorize # Syntax highlighting for catted fi
 znap source ohmyzsh/ohmyzsh plugins/command-not-found # Suggestion when command is not found
 znap source ohmyzsh/ohmyzsh plugins/docker # Suggestion when command is not found
 znap source ohmyzsh/ohmyzsh plugins/docker-compose # Suggestion when command is not found
-znap source zdharma/fast-syntax-highlighting # Syntax highlighting
 znap source zsh-users/zsh-autosuggestions # Autosuggest commands on type
 znap source gko/ssh-connect # Easier SSH management
 znap source diazod/git-prune # Git prune command (gprune)
