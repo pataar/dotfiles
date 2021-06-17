@@ -1,6 +1,7 @@
 {
 	"arrowParens": "avoid",
 	"bracketSpacing": true,
+	"htmlWhitespaceSensitivity": "ignore",
 	"jsxBracketSameLine": true,
 	"printWidth": 120,
 	"proseWrap": "preserve",

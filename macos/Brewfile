@@ -17,7 +17,6 @@ brew 'coreutils'
 brew 'findutils'
 
 # Install Binaries
-brew 'azure-cli'
 brew 'dive'
 brew 'docker-compose'
 brew 'git'

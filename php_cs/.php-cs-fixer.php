@@ -1,33 +1,36 @@
 <?php
 
 $finder = PhpCsFixer\Finder::create()
-	->in([__DIR__ . "/app"])
-	->in([__DIR__ . "/bootstrap"])
-	->in([__DIR__ . "/config"])
-	->in([__DIR__ . "/database"])
-	->in([__DIR__ . "/public"])
-	->in([__DIR__ . "/resources"])
-	->in([__DIR__ . "/tests"]);
+	->in([__DIR__ . '/app'])
+	->in([__DIR__ . '/bootstrap'])
+	->in([__DIR__ . '/config'])
+	->in([__DIR__ . '/database'])
+	->in([__DIR__ . '/public'])
+	->in([__DIR__ . '/resources'])
+	->in([__DIR__ . '/tests']);
 
-return PhpCsFixer\Config::create()
+$config = new PhpCsFixer\Config();
+$config
 	->setRules([
 		'@PSR2' => true,
-		'align_multiline_comment' => ["comment_type" => "all_multiline"],
+		'align_multiline_comment' => ['comment_type' => 'all_multiline'],
 		'array_indentation' => true,
 		'array_syntax' => ['syntax' => 'short'],
 		'binary_operator_spaces' => true,
 		'blank_line_after_opening_tag' => true,
-		'braces' => ['position_after_functions_and_oop_constructs' => "same", 'allow_single_line_closure' => true],
+		'braces' => ['position_after_functions_and_oop_constructs' => 'same', 'allow_single_line_closure' => true],
 		'cast_spaces' => true,
-		'class_attributes_separation' => ["elements" => ['method']],
+		'class_attributes_separation' => ['elements' => ['method' => 'one']],
 		'combine_consecutive_issets' => true,
 		'combine_consecutive_unsets' => true,
 		'concat_space' => ['spacing' => 'one'],
 		'constant_case' => ['case' => 'lower'],
 		'compact_nullable_typehint' => true,
 		'declare_equal_normalize' => ['space' => 'single'],
+		'explicit_indirect_variable' => true,
+		'explicit_string_variable' => true,
 		'fully_qualified_strict_types' => true,
-		'function_declaration' => ['closure_function_spacing' => "none"],
+		'function_declaration' => ['closure_function_spacing' => 'none'],
 		'function_typehint_space' => true,
 		'include' => true,
 		'indentation_type' => true,
@@ -37,6 +40,7 @@ return PhpCsFixer\Config::create()
 		'lowercase_static_reference' => true,
 		'magic_method_casing' => true,
 		'multiline_whitespace_before_semicolons' => ['strategy' => 'no_multi_line'],
+		'new_with_braces' => true,
 		'no_alternative_syntax' => true,
 		'no_blank_lines_after_phpdoc' => true,
 		'no_empty_comment' => true,
@@ -63,6 +67,7 @@ return PhpCsFixer\Config::create()
 		'single_blank_line_before_namespace' => true,
 		'single_class_element_per_statement' => true,
 		'single_line_after_imports' => true,
+		'single_quote' => ['strings_containing_single_quote_chars' => true],
 		'ternary_operator_spaces' => true,
 		'trim_array_spaces' => true,
 		'unary_operator_spaces' => true,
@@ -70,6 +75,8 @@ return PhpCsFixer\Config::create()
 		'yoda_style' => ['equal' => false, 'identical' => false, 'less_and_greater' => false] // Disable Yoda style
 	])
 	->setIndent("\t")
-	->setCacheFile(strpos(__DIR__, '/var/www') === 0 ? ".cache/phpcs_cache_docker" : ".cache/phpcs_cache")
+	->setCacheFile(strpos(__DIR__, '/var/www') === 0 ? '.cache/phpcs_cache_docker' : '.cache/phpcs_cache')
 	->setLineEnding("\n")
 	->setFinder($finder);
+
+return $config;
