@@ -10,13 +10,14 @@ cask_args appdir: '/Applications'
 # Install ZSH
 brew 'zsh'
 
-# Install GNU core utilities (those that come with OS X are outdated)
+# Install GNU core utilities (those that come with MacOS are outdated)
 brew 'coreutils'
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew 'findutils'
 
 # Install Binaries
+brew 'bash'
 brew 'dive'
 brew 'docker-compose'
 brew 'git'
