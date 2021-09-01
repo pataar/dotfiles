@@ -20,6 +20,7 @@ znap pull
 
 echo "${COLORED}Updating .zshrc stuff...${NC}"
 cp ./zsh/.zshrc ~/
+cp ./zsh/.czrc ~/
 cp ./zsh/.p10k.zsh ~/
 
 ## Update the mkcert root certificate

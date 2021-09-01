@@ -61,6 +61,8 @@ alias dcep="docker-compose exec php"
 alias dcp="docker-compose pull"
 alias dupd="dcp && up"
 alias gencl=" npx conventional-changelog-cli -p angular -i CHANGELOG.md -s"
+alias gca="cz -a"
+alias gc="cz"
 
 # Glab aliases
 alias mrlist="glab mr list --assignee=@me  --reviewer=@me"
