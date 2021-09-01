@@ -6,6 +6,12 @@ NC='\033[0m'
 echo "\033[0;36m| dotfiles | @pataar"
 echo "${COLORED}Updating the Mac of $(whoami)...${NC}"
 
+
+echo "${COLORED}Updating .zshrc stuff...${NC}"
+cp ./zsh/.zshrc ~/
+cp ./zsh/.czrc ~/
+cp ./zsh/.p10k.zsh ~/
+
 echo "${COLORED}Updating .zsh-snap repo...${NC}"
 cd ~/.zsh-snap && git pull 2>/dev/null && cd -
 
@@ -17,11 +23,6 @@ git pull 2>/dev/null
 echo "${COLORED}Updating znap stuff...${NC}"
 znap status
 znap pull
-
-echo "${COLORED}Updating .zshrc stuff...${NC}"
-cp ./zsh/.zshrc ~/
-cp ./zsh/.czrc ~/
-cp ./zsh/.p10k.zsh ~/
 
 ## Update the mkcert root certificate
 if test $(which mkcert); then
