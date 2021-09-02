@@ -6,6 +6,8 @@ NC='\033[0m'
 echo "\033[0;36m| dotfiles | @pataar"
 echo "${COLORED}Updating the Mac of $(whoami)...${NC}"
 
+echo "${COLORED}Updating current repo...${NC}"
+git pull 2>/dev/null
 
 echo "${COLORED}Updating .zshrc stuff...${NC}"
 cp ./zsh/.zshrc ~/
@@ -16,9 +18,6 @@ echo "${COLORED}Updating .zsh-snap repo...${NC}"
 cd ~/.zsh-snap && git pull 2>/dev/null && cd -
 
 source ~/.zshrc
-
-echo "${COLORED}Updating current repo...${NC}"
-git pull 2>/dev/null
 
 echo "${COLORED}Updating znap stuff...${NC}"
 znap status
