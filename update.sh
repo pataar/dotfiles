@@ -24,7 +24,7 @@ znap status
 znap pull
 
 ## Update the mkcert root certificate
-if [ -x "$(command -v mkdcert)" ]; then
+if [ -x "$(command -v mkcert)" ]; then
   echo "${COLORED}Updating mkcert stuff...${NC}"
   mkcert -install 2>/dev/null
   cp -r ./bin/ /usr/local/bin/
