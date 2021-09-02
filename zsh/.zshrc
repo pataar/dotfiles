@@ -101,4 +101,6 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 [[ -f "~/.fastlane_session" ]] && source ~/.fastlane_session
 
 # Rust stuff
+if [ -x "$(command -v cargo)" ]; then
 . "$HOME/.cargo/env"
+fi
