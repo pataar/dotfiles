@@ -35,6 +35,7 @@ touch $HISTFILE
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
+export TZ="Europe/Amsterdam"
 
 # source $ZSH/oh-my-zsh.sh
 # Aliases
