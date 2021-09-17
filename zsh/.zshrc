@@ -59,15 +59,19 @@ alias down="docker-compose down"
 alias dcep="docker-compose exec php"
 alias dcp="docker-compose pull"
 alias dupd="dcp && up"
-alias gencl=" npx conventional-changelog-cli -p angular -i CHANGELOG.md -s"
+alias gencl="npx conventional-changelog-cli -p angular -i CHANGELOG.md -s"
 alias gca="cz -a"
 alias gc="cz"
 
 # Glab aliases
-alias mrlist="glab mr list --assignee=@me  --reviewer=@me"
+alias mrlist="glab mr list --assignee=@me --reviewer=@me"
 alias mrdiff="glab mr diff"
 alias mrapprove="glab mr approve"
 alias mrmerge="glab mr merge"
+
+# Git aliases
+alias last_commit_message="git show -s --format=%s"
+alias refresh_remote_tags="git tag -d \$(git tag) && git fetch --tags"
 
 # Preferred editor for local and remote sessions
 
