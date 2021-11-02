@@ -13,6 +13,7 @@ source ~/.zsh-snap/znap.zsh
 export DEFAULT_USER=$(whoami)
 
 alias git_current_branch="git branch --show-current"
+alias git_recent_branches="git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
 
 # Init theme
 znap source romkatv/powerlevel10k
