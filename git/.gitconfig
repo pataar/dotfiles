@@ -4,6 +4,7 @@
 [user]
 	name = pieter
 	email = pieter@interactivestudios.nl
+	signingkey = 3EAD8E674CC96B02
 [push]
 	default = simple
         followTags = true
@@ -52,3 +53,10 @@
 
 [interactive]
     diffFilter = delta --color-only
+[maintenance]
+	repo = /Users/pieter/.zsh_plugins/fast-syntax-highlighting
+	repo = /Users/pieter/.zsh_plugins/git-prune
+	repo = /Users/pieter/.zsh_plugins/ohmyzsh
+	repo = /Users/pieter/.zsh_plugins/powerlevel10k
+	repo = /Users/pieter/.zsh_plugins/ssh-connect
+	repo = /Users/pieter/.zsh_plugins/zsh-autosuggestions
