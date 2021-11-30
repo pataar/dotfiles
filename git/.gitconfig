@@ -60,3 +60,5 @@
 	repo = /Users/pieter/.zsh_plugins/powerlevel10k
 	repo = /Users/pieter/.zsh_plugins/ssh-connect
 	repo = /Users/pieter/.zsh_plugins/zsh-autosuggestions
+[help]
+	autocorrect = prompt

@@ -23,7 +23,7 @@ znap source romkatv/powerlevel10k
 znap source ohmyzsh/ohmyzsh plugins/git # Git aliases
 znap source ohmyzsh/ohmyzsh plugins/colorize # Syntax highlighting for catted files
 #znap source ohmyzsh/ohmyzsh plugins/docker # Suggestion when command is not found
-znap source ohmyzsh/ohmyzsh plugins/docker-compose # Suggestion when command is not found
+#znap source ohmyzsh/ohmyzsh plugins/docker-compose # Suggestion when command is not found
 znap source zdharma/fast-syntax-highlighting # Syntax highlighting
 znap source zsh-users/zsh-autosuggestions # Autosuggest commands on type
 znap source diazod/git-prune # Git prune command (gprune)
@@ -46,7 +46,7 @@ alias "c."="c ."
 alias ci="composer install"
 alias cdu="composer du"
 alias lmb="lab mr browse"
-alias lmco="glab mr create -a $(whoami) --remove-source-branch --push -y --title "$(last_commit_message)" -b"
+alias lmco="glab mr create -a "$(whoami)" --remove-source-branch --push -y -b"
 alias n="nano"
 alias ni="npm install"
 alias reloadcli="source $HOME/.zshrc"
@@ -55,10 +55,10 @@ alias y="yarn"
 alias yw="yarn watch"
 alias yb="yarn build"
 alias yh="yarn hot"
-alias up="docker-compose up -d --build"
-alias down="docker-compose down"
-alias dcep="docker-compose exec php"
-alias dcp="docker-compose pull"
+alias up="docker compose up -d --build"
+alias down="docker compose down"
+alias dcep="docker compose exec php"
+alias dcp="docker compose pull"
 alias dupd="dcp && up"
 alias gencl="npx conventional-changelog-cli -p angular -i CHANGELOG.md -s"
 alias gca="cz -a"
