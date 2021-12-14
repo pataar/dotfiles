@@ -48,7 +48,7 @@ if test $(which zsh); then
 fi
 
 git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git ~/.zsh-snap
-source zsh-snap/install.zsh
+source .zsh-snap/install.zsh
 
 echo "${COLORED}Installing .zshrc stuff...${NC}"
 cp ./git/.gitconfig ~/
