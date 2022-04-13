@@ -45,8 +45,9 @@ alias "c"="code"
 alias "c."="c ."
 alias ci="composer install"
 alias cdu="composer du"
-alias lmb="lab mr browse"
+alias glmb="lab mr browse"
 alias lmco="glab mr create -a "$(whoami)" --remove-source-branch --squash-before-merge --push -y -b"
+alias gissue="glab issue view --web"
 alias n="nano"
 alias ni="npm install"
 alias reloadcli="source $HOME/.zshrc"
@@ -98,7 +99,6 @@ fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 ulimit -n 2048
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
 
 # Volta stuff
 export VOLTA_HOME="$HOME/.volta"
@@ -108,3 +108,6 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Rust stuff
 [[ -f "$HOME/.cargo/env" ]] && . $HOME/.cargo/env
+
+export JAVA_HOME="/usr/local/opt/openjdk@11"
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
