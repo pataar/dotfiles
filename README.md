@@ -8,5 +8,7 @@ It mainly contains a custom ZSH setup with some useful plugins and a bunch of Br
 
 Just run
 ```sh
-git clone https://github.com/pataar/dotfiles.git && ./install.sh
+git clone https://github.com/pataar/dotfiles.git && \
+	cd dotfiles && \
+	./install.sh
 ```
