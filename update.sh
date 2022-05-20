@@ -4,7 +4,7 @@ COLORED='\033[0;32m'
 NC='\033[0m'
 
 echo "\033[0;36m| dotfiles | @pataar"
-echo "${COLORED}Updating the dev env of $(whoami)@${hostname}...${NC}"
+echo "${COLORED}Updating the dev env of $(whoami)@$(hostname)...${NC}"
 
 echo "${COLORED}Updating current repo...${NC}"
 git pull 2>/dev/null

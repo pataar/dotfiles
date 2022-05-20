@@ -1,12 +1,11 @@
-#!/bin/sh
-# Orginally by driesvints. Edited by Pataar
+#!/bin/bash
 
 COLORED='\033[0;32m'
 NC='\033[0m'
 
 echo "\n";
 echo "\033[0;36m| Dev install script by Pataar | "
-echo "\033[0;36m| Running on $(whoami)@${hostname} | "
+echo "\033[0;36m| Running on $(whoami)@$(hostname) | "
 echo "\n";
 
 
