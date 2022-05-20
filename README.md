@@ -12,3 +12,10 @@ git clone https://github.com/pataar/dotfiles.git && \
 	cd dotfiles && \
 	./install.sh
 ```
+
+### Updating
+
+In your dotfiles directory, run: 
+```sh
+	./update.sh
+```
