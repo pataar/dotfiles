@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Orginally by driesvints. Edited by Pataar
 
 COLORED='\033[0;32m'
