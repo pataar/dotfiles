@@ -120,4 +120,4 @@ alias mkcert="unset JAVA_HOME && mkcert"
 
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 
-. /usr/local/opt/asdf/libexec/asdf.sh
+[[ -f "/usr/local/opt/asdf/libexec/asdf.sh" ]] && . /usr/local/opt/asdf/libexec/asdf.sh
