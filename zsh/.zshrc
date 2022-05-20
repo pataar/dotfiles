@@ -1,5 +1,3 @@
-# Init Znap
-zstyle ':znap:*' repos-dir ~/.zsh_plugins
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -8,7 +6,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source ~/.zsh-snap/znap.zsh
+# Init Znap
+[[ -f ~/.zsh/zsh-snap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/.zsh/zsh-snap
+
+source ~/.zsh/zsh-snap/znap.zsh  # Start Znap
 
 export DEFAULT_USER=$(whoami)
 
@@ -21,6 +24,7 @@ znap source romkatv/powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 znap source ohmyzsh/ohmyzsh plugins/git # Git aliases
+znap source ohmyzsh/ohmyzsh plugins/asdf
 znap source ohmyzsh/ohmyzsh plugins/colorize # Syntax highlighting for catted files
 #znap source ohmyzsh/ohmyzsh plugins/docker # Suggestion when command is not found
 #znap source ohmyzsh/ohmyzsh plugins/docker-compose # Suggestion when command is not found
@@ -110,4 +114,10 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 [[ -f "$HOME/.cargo/env" ]] && . $HOME/.cargo/env
 
 export JAVA_HOME="/usr/local/opt/openjdk@11"
+
+# Dumb Java 11 fix
+alias mkcert="unset JAVA_HOME && mkcert"
+
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+
+. /usr/local/opt/asdf/libexec/asdf.sh

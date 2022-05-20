@@ -11,11 +11,10 @@ git pull 2>/dev/null
 
 echo "${COLORED}Updating .zshrc stuff...${NC}"
 cp ./zsh/.zshrc ~/
-cp ./zsh/.czrc ~/
 cp ./zsh/.p10k.zsh ~/
 
 echo "${COLORED}Updating .zsh-snap repo...${NC}"
-cd ~/.zsh-snap && git pull 2>/dev/null && cd -
+cd ~/.zsh/zsh-snap && git pull 2>/dev/null && cd -
 
 source ~/.zshrc
 

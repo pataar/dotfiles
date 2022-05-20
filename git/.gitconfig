@@ -1,13 +1,9 @@
 [core]
 	editor = nano
 	excludesfile = /Users/pieter/.gitignore_global
-[user]
-	name = pieter
-	email = pieter@interactivestudios.nl
-	signingkey = 3EAD8E674CC96B02
 [push]
 	default = simple
-        followTags = true
+    followTags = true
 [gpg]
 	program = gpg
 [alias]
@@ -15,7 +11,7 @@
 [color]
 	ui = true
 [pager]
-       diff = delta
+    diff = delta
 [diff]
     tool = kdiff3
 [difftool "kdiff3"]
@@ -43,7 +39,6 @@
 [http]
 	postBuffer = 524288000
 
-
 [delta]
     plus-style = "syntax #012800"
     minus-style = "syntax #340001"
@@ -54,11 +49,11 @@
 [interactive]
     diffFilter = delta --color-only
 [maintenance]
-	repo = /Users/pieter/.zsh_plugins/fast-syntax-highlighting
-	repo = /Users/pieter/.zsh_plugins/git-prune
-	repo = /Users/pieter/.zsh_plugins/ohmyzsh
-	repo = /Users/pieter/.zsh_plugins/powerlevel10k
-	repo = /Users/pieter/.zsh_plugins/ssh-connect
-	repo = /Users/pieter/.zsh_plugins/zsh-autosuggestions
+	repo = /Users/pieter/.zsh/fast-syntax-highlighting
+	repo = /Users/pieter/.zsh/git-prune
+	repo = /Users/pieter/.zsh/ohmyzsh
+	repo = /Users/pieter/.zsh/powerlevel10k
+	repo = /Users/pieter/.zsh/zsh-autosuggestions
+	repo = /Users/pieter/.zsh/zsh-snap
 [help]
 	autocorrect = prompt

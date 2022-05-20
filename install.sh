@@ -32,13 +32,6 @@ if [ "$(uname)" == "Darwin" ]; then
 
   xcode-select --install
 
-  ## Install the correct ruby version using rbenv
-  if test $(which rbenv); then
-  echo "${COLORED}Installing Ruby...${NC}"
-    rbenv install 2.7.3
-    rbenv global 2.7.3
-  fi
-
 fi
 
 # Make ZSH the default shell environment
@@ -47,15 +40,16 @@ if test $(which zsh); then
   chsh -s $(which zsh)
 fi
 
-git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git ~/.zsh-snap
-source .zsh-snap/install.zsh
-
 echo "${COLORED}Installing .zshrc stuff...${NC}"
-cp ./git/.gitconfig ~/
+
+if [ "$(whoami)" == "pieter" ] ||  [ "$(whoami)" == "pataar" ]; then
+  cp ./git/.gitconfig ~/
+fi
+
 cp ./zsh/.zshrc ~/
 cp ./zsh/.p10k.zsh ~/
 
-source ~/.zshrc
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
 
 ## Install mkcert and the root certificate
 if test $(which mkcert); then
