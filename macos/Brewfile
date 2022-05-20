@@ -1,8 +1,17 @@
 # Taps
-tap "homebrew/core"
 tap "homebrew/bundle"
-tap "homebrew/services"
+tap "homebrew/cask"
 tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+
+tap "achannarasappa/tap"
+tap "adoptopenjdk/openjdk"
+tap "getsentry/tools"
+tap "rockymadden/rockymadden"
+tap "wez/wezterm"
+tap "zaquestion/tap"
 
 # Make sure apps get installed in system Applications dir
 cask_args appdir: '/Applications'
@@ -16,18 +25,20 @@ brew 'coreutils'
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew 'findutils'
 
+# Build tools
+brew "autoconf"
+brew "automake"
+
 # Install Binaries
 brew 'asdf'
 brew 'bash'
-brew 'dive'
 brew 'git'
 brew 'git-cliff'
 brew 'git-delta'
+brew "gh"
 brew 'glab'
 brew 'htop'
-brew 'hub'
 brew 'jq'
-brew 'mkcert'
 brew 'nano'
 brew 'nss'
 brew 'openssl'
@@ -38,7 +49,11 @@ brew 'watch'
 brew 'wget'
 brew 'youtube-dl'
 
-# Install Frontend stuff
+# Install backend development stuff
+brew 'dive'
+brew 'mkcert'
+
+# Install frontend development stuff
 brew 'volta'
 
 # Fonts
@@ -57,6 +72,7 @@ cask 'google-chrome'
 cask 'iterm2'
 cask 'itsycal'
 cask 'jetbrains-toolbox'
+cask "kdiff3"
 cask 'slack'
 cask 'spotify'
 cask 'ticktick'
