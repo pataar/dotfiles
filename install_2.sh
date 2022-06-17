@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 COLORED='\033[0;32m'
 NC='\033[0m'
