@@ -1,4 +1,3 @@
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -25,6 +24,7 @@ znap source romkatv/powerlevel10k
 
 znap source ohmyzsh/ohmyzsh plugins/git # Git aliases
 znap source ohmyzsh/ohmyzsh plugins/asdf
+znap source agkozak/zsh-z
 znap source ohmyzsh/ohmyzsh plugins/colorize # Syntax highlighting for catted files
 #znap source ohmyzsh/ohmyzsh plugins/docker # Suggestion when command is not found
 #znap source ohmyzsh/ohmyzsh plugins/docker-compose # Suggestion when command is not found
@@ -81,7 +81,18 @@ alias refresh_remote_tags="git tag -d \$(git tag) && git fetch --tags"
 
 # Preferred editor for local and remote sessions
 
-export EDITOR='nano'
+# Handle Mac platforms
+CPU=$(uname -p)
+if [[ "$CPU" == "arm" ]]; then
+    export PATH="/opt/homebrew/bin:$PATH"
+    export EDITOR=/opt/homebrew/bin/nano
+    alias nano=/opt/homebrew/bin/nano
+    alias oldbrew=/usr/local/bin/brew
+else
+    export PATH="/usr/local/bin:$PATH"
+    export EDITOR=/usr/local/bin/nano
+    alias nano=/usr/local/bin/nano
+fi
 
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
@@ -121,3 +132,5 @@ alias mkcert="unset JAVA_HOME && mkcert"
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 
 [[ -f "/usr/local/opt/asdf/libexec/asdf.sh" ]] && . /usr/local/opt/asdf/libexec/asdf.sh
+
+
