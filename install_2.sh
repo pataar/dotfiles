@@ -1,11 +1,11 @@
-#!/bin/zsh
+#!/bin/bash
 
 COLORED='\033[0;32m'
 NC='\033[0m'
 
 echo "${COLORED}Installing .zshrc stuff...${NC}"
 
-if [ "$(whoami)" == "pieter" ] ||  [ "$(whoami)" == "pataar" ]; then
+if [[ "$(whoami)" == "pieter" ]]; then
   cp ./git/.gitconfig ~/
 fi
 

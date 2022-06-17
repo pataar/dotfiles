@@ -53,4 +53,4 @@ if test $(which zsh); then
   chsh -s $(which zsh)
 fi
 
-./install_2.sh
+zsh ./install_2.sh
