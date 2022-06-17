@@ -41,8 +41,6 @@ if [ "$(uname)" == "Darwin" ]; then
   echo "${COLORED}Updating brew bundle...${NC}"
   brew bundle --file=./macos/Brewfile
 
-  open ./iterm/monokai-remastered.itermcolors
-
   xcode-select --install
 
 fi
@@ -53,4 +51,4 @@ if test $(which zsh); then
   chsh -s $(which zsh)
 fi
 
-bash ./install_2.sh
+zsh ./zsh_install.sh
