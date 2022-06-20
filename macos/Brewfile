@@ -72,6 +72,7 @@ cask 'google-drive'
 cask 'iterm2'
 cask 'itsycal'
 cask 'jetbrains-toolbox'
+cask 'postman'
 cask "kdiff3"
 cask 'slack'
 cask 'spotify'
