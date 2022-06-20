@@ -10,6 +10,7 @@ if [[ "$(whoami)" == "pieter" ]]; then
 fi
 
 cp ./zsh/.zshrc ~/
+cp ./zsh/.huskyrc ~/
 cp ./zsh/.p10k.zsh ~/
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
