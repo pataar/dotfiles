@@ -23,7 +23,7 @@ znap source romkatv/powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 znap source ohmyzsh/ohmyzsh plugins/git # Git aliases
-znap source ohmyzsh/ohmyzsh plugins/asdf
+#znap source ohmyzsh/ohmyzsh plugins/asdf
 znap source agkozak/zsh-z
 znap source ohmyzsh/ohmyzsh plugins/colorize # Syntax highlighting for catted files
 #znap source ohmyzsh/ohmyzsh plugins/docker # Suggestion when command is not found
@@ -124,13 +124,8 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # Rust stuff
 [[ -f "$HOME/.cargo/env" ]] && . $HOME/.cargo/env
 
-export JAVA_HOME="/usr/local/opt/openjdk@11"
-
-# Dumb Java 11 fix
-alias mkcert="unset JAVA_HOME && mkcert"
 
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 
-[[ -f "/usr/local/opt/asdf/libexec/asdf.sh" ]] && . /usr/local/opt/asdf/libexec/asdf.sh
-
-
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+. ~/.asdf/plugins/java/set-java-home.zsh

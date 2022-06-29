@@ -57,3 +57,8 @@
 	repo = /Users/pieter/.zsh/zsh-snap
 [help]
 	autocorrect = prompt
+[user]
+	email = pieter@interactivestudios.nl
+	name = pieter
+[credential]
+	helper = osxkeychain
