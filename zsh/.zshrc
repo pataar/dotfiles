@@ -69,6 +69,8 @@ alias gencl="npx conventional-changelog-cli -p angular -i CHANGELOG.md -s"
 alias gca="cz -a"
 alias gc="cz"
 
+alias docker-compose="docker compose"
+
 # Glab aliases
 alias mrlist="glab mr list --assignee=@me --reviewer=@me"
 alias mrdiff="glab mr diff"
@@ -96,6 +98,8 @@ fi
 
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
+
+export CAPACITOR_ANDROID_STUDIO_PATH="~/Applications/JetBrains Toolbox/Android Studio.app"
 
 export ANDROID_SDK_ROOT=~/Library/Android/sdk/
 export PATH=${PATH}:/usr/local/sbin:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/platform-tools/tools:~/.composer/vendor/bin:~/Library/Android/sdk/tools
@@ -126,6 +130,23 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+export ANDROID_HOME="$ANDROID_SDK_ROOT"
 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 . ~/.asdf/plugins/java/set-java-home.zsh
+
+# Golang stuff
+export PATH="$(go env GOPATH)/bin:$PATH"
+
+# bun completions
+[ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun completions
+[ -s "/Users/pieter/.bun/_bun" ] && source "/Users/pieter/.bun/_bun"
+
+# Enable the use of '!'
+unsetopt BANG_HIST

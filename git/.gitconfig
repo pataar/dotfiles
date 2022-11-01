@@ -8,6 +8,7 @@
 	program = gpg
 [alias]
 	git = !exec git
+	unstage = reset HEAD --
 [color]
 	ui = true
 [pager]
@@ -55,6 +56,7 @@
 	repo = /Users/pieter/.zsh/powerlevel10k
 	repo = /Users/pieter/.zsh/zsh-autosuggestions
 	repo = /Users/pieter/.zsh/zsh-snap
+	repo = /Users/pieter/.zsh/zsh-z
 [help]
 	autocorrect = prompt
 [user]
