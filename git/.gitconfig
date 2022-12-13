@@ -1,6 +1,7 @@
 [core]
 	editor = nano
 	excludesfile = /Users/pieter/.gitignore_global
+	mergeoptions = --no-edit
 [push]
 	default = simple
     followTags = true
@@ -30,8 +31,6 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[commit]
-	template = /Users/pieter/.stCommitMsg
 [pull]
 	rebase = false
 [trim]
