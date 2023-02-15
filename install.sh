@@ -8,6 +8,7 @@ echo "\033[0;36m| Dev install script by Pataar | "
 echo "\033[0;36m| Running on $(whoami)@$(hostname) | "
 echo "\n";
 
+source ./bootstrap.sh
 
 if [ "$(uname)" == "Darwin" ]; then
   echo "${COLORED}Setting up the Mac for $(whoami)...${NC}"

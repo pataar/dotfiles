@@ -32,6 +32,7 @@ brew "automake"
 # Install Binaries
 brew 'asdf'
 brew 'bash'
+brew 'exa'
 brew 'git'
 brew 'git-cliff'
 brew 'git-delta'
@@ -48,6 +49,7 @@ brew 'scrcpy'
 brew 'watch'
 brew 'wget'
 brew 'youtube-dl'
+brew 'z'
 
 # Install backend development stuff
 brew 'dive'
@@ -62,6 +64,7 @@ cask 'font-jetbrains-mono-nerd-font'
 
 # Apps
 cask '1password'
+cask 'alacritty'
 cask 'alfred'
 cask 'appcleaner'
 cask 'bettertouchtool'
