@@ -5,6 +5,10 @@
 # Credits to https://github.com/andrew8088/dotfiles
 
 # cd "$(dirname "$0")/.."
+
+git submodule init
+git submodule update
+
 DOTFILES=$(pwd -P)
 
 set -e
