@@ -8,7 +8,6 @@ echo "\033[0;36m| Dev install script by Pataar | "
 echo "\033[0;36m| Running on $(whoami)@$(hostname) | "
 echo "\n";
 
-source ./bootstrap.sh
 
 if [ "$(uname)" == "Darwin" ]; then
   echo "${COLORED}Setting up the Mac for $(whoami)...${NC}"
@@ -40,7 +39,7 @@ if [ "$(uname)" == "Darwin" ]; then
   # Install all our dependencies with bundle (See Brewfile)
   brew tap homebrew/bundle
   echo "${COLORED}Updating brew bundle...${NC}"
-  brew bundle --file=./macos/Brewfile
+  brew bundle --file=./brew/Brewfile
 
   xcode-select --install
 
@@ -53,3 +52,4 @@ if test $(which zsh); then
 fi
 
 zsh ./zsh_install.sh
+source ./bootstrap.sh
