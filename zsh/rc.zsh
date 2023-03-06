@@ -68,9 +68,13 @@ else
     alias nano=/usr/local/bin/nano
 fi
 
+
+preexec() { print -Pn "\e]0;$1\a" } # Show the command in the terminal title bar
+
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 export PHP_CS_FIXER_IGNORE_ENV=1
+export HOMEBREW_NO_ANALYTICS=1
 
 export ANDROID_SDK_ROOT=~/Library/Android/sdk/
 export PATH=${PATH}:/usr/local/sbin:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/platform-tools/tools:~/.composer/vendor/bin:~/Library/Android/sdk/tools:~/.bin
@@ -94,4 +98,14 @@ unsetopt BANG_HIST
 
 eval "$(oh-my-posh init zsh --config $DOTFILES/oh-my-posh/config.json)"
 source_if_exists $DOTFILES/zsh/lang.zsh
+
+# We need to accept UTF 8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# Auto start tmux when we're not in a tmux session
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
 

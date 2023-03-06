@@ -25,6 +25,9 @@ alias gca="cz -a"
 alias gc="cz"
 alias trim="awk '{\$1=\$1;print}'"
 
+
+alias ta='tmux attach -t'
+
 alias docker-compose="docker compose"
 
 # Glab aliases
