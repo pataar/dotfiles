@@ -25,6 +25,7 @@ alias gca="cz -a"
 alias gc="cz"
 alias trim="awk '{\$1=\$1;print}'"
 
+alias lv="lvim ." # Open lunarvim in current directory
 
 alias ta='tmux attach -t'
 

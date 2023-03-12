@@ -109,3 +109,6 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
 fi
 
+
+# bun completions
+[ -s "/Users/pieter/.bun/_bun" ] && source "/Users/pieter/.bun/_bun"

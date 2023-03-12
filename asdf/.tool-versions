@@ -1,3 +1,5 @@
 golang 1.20.1
 php 8.2.3
 ruby 3.2.1
+java openjdk-17
+gradle 7.3

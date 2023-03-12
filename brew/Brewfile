@@ -40,6 +40,7 @@ brew "gh"
 brew 'glab'
 brew 'htop'
 brew 'jq'
+brew 'lazygit'
 brew 'nano'
 brew 'nss'
 brew 'openssl'
