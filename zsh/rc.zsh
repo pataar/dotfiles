@@ -19,21 +19,9 @@ export DEFAULT_USER=$(whoami)
 alias git_current_branch="git branch --show-current"
 alias git_recent_branches="git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
 
-# Init theme
-# znap source romkatv/powerlevel10k
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 znap source ohmyzsh/ohmyzsh plugins/git # Git aliases
-#znap source ohmyzsh/ohmyzsh plugins/asdf
-znap source agkozak/zsh-z
-znap source ohmyzsh/ohmyzsh plugins/colorize # Syntax highlighting for catted files
-#znap source ohmyzsh/ohmyzsh plugins/docker # Suggestion when command is not found
-#znap source ohmyzsh/ohmyzsh plugins/docker-compose # Suggestion when command is not found
 znap source zdharma/fast-syntax-highlighting # Syntax highlighting
 znap source zsh-users/zsh-autosuggestions # Autosuggest commands on type
-znap source diazod/git-prune # Git prune command (gprune)
-
 
 source_if_exists $DOTFILES/zsh/history.zsh
 source_if_exists $DOTFILES/zsh/git.zsh
@@ -51,9 +39,6 @@ touch $HISTFILE
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:~/.local/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
 export TZ="Europe/Amsterdam"
-
-
-# Preferred editor for local and remote sessions
 
 # Handle Mac platforms
 CPU=$(uname -p)

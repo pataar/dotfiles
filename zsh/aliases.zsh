@@ -7,7 +7,6 @@ alias cdu="composer du"
 alias glmb="lab mr browse"
 alias lmco="glab mr create -a "$(whoami)" --remove-source-branch --squash-before-merge --push -y -b"
 alias gissue="glab issue view --web"
-alias n="nano"
 alias ni="npm install"
 alias reloadcli="source $HOME/.zshrc"
 alias weather="curl -4 http://wttr.in"
@@ -20,15 +19,13 @@ alias down="docker compose down"
 alias dcep="docker compose exec php"
 alias dcp="docker compose pull"
 alias dupd="dcp && up"
-alias gencl="npx conventional-changelog-cli -p angular -i CHANGELOG.md -s"
-alias gca="cz -a"
-alias gc="cz"
+alias gg="lazygit"
 alias trim="awk '{\$1=\$1;print}'"
-
+alias x="exit"
 alias lv="lvim ." # Open lunarvim in current directory
 
 alias ta='tmux attach -t'
-alias prune-branches="git branch -vv | grep ': gone]' | grep -v '\*' | awk '{ print $1; }' | xargs -r git branch -D"
+alias prune-branches=git branch -vv | grep ': gone]' | grep -v '\*' | awk '{ print $1; }' | xargs -r git branch -D
 alias docker-compose="docker compose"
 
 # Glab aliases
@@ -40,6 +37,10 @@ alias mrmerge="glab mr merge"
 # Git aliases
 alias last_commit_message="git show -s --format=%s"
 alias refresh_remote_tags="git tag -d \$(git tag) && git fetch --tags"
+
+function prune-branches {
+  git branch -vv | grep ': gone]' | grep -v '\*' | awk '{ print $1; }' | xargs -r git branch -D
+}
 
 function take {
   mkdir -p $1

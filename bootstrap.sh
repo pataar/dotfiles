@@ -27,6 +27,10 @@ success () {
   printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
 }
 
+skipped () {
+  printf "\r\033[2K  [ \033[00;38m//\033[0m ] $1\n"
+}
+
 fail () {
   printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
   echo ''
@@ -101,7 +105,7 @@ link_file () {
 
     if [ "$skip" == "true" ]
     then
-      success "skipped $src"
+      skipped "skipped $src"
     fi
   fi
 
@@ -122,6 +126,7 @@ prop () {
 
 install_dotfiles () {
   info 'installing dotfiles'
+  echo ''
 
   local overwrite_all=false backup_all=false skip_all=false
 
@@ -142,7 +147,7 @@ install_dotfiles () {
 
 create_env_file () {
     if test -f "$HOME/.env.sh"; then
-        success "$HOME/.env.sh file already exists, skipping"
+        skipped "$HOME/.env.sh file already exists, skipping"
     else
         echo "export DOTFILES=$DOTFILES" > $HOME/.env.sh
         success 'created ~/.env.sh'
@@ -152,6 +157,5 @@ create_env_file () {
 install_dotfiles
 create_env_file
 
-echo ''
 echo ''
 success 'All installed!'
