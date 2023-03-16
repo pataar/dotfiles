@@ -25,7 +25,6 @@ alias x="exit"
 alias lv="lvim ." # Open lunarvim in current directory
 
 alias ta='tmux attach -t'
-alias prune-branches=git branch -vv | grep ': gone]' | grep -v '\*' | awk '{ print $1; }' | xargs -r git branch -D
 alias docker-compose="docker compose"
 
 # Glab aliases
