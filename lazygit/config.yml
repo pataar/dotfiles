@@ -1,2 +1,7 @@
 services:
-  gitlab.interactivestudios.nl: 'gitlab:gitlab.interactivestudios.nl'
+  gitlab.interactivestudios.nl: "gitlab:gitlab.interactivestudios.nl"
+
+git:
+  paging:
+    colorArg: always
+    pager: delta -s --dark --paging=never --24-bit-color=never
