@@ -31,8 +31,9 @@ source_if_exists /usr/local/etc/profile.d/z.sh
 source_if_exists /opt/homebrew/etc/profile.d/z.sh
 
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTTIMEFORMAT="%F %T "
+HISTSIZE=100000
+SAVEHIST=100000
 setopt SHARE_HISTORY
 touch $HISTFILE
 
