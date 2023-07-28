@@ -26,6 +26,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 source_if_exists /usr/local/etc/profile.d/z.sh
 source_if_exists /opt/homebrew/etc/profile.d/z.sh
 
+# java stuff
+source_if_exists ~/.asdf/plugins/java/set-java-home.zsh
 # pnpm
 export PNPM_HOME="/Users/pieter/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"

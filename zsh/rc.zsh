@@ -19,6 +19,7 @@ export DEFAULT_USER=$(whoami)
 alias git_current_branch="git branch --show-current"
 alias git_recent_branches="git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
 
+
 znap source ohmyzsh/ohmyzsh plugins/git # Git aliases
 znap source zdharma/fast-syntax-highlighting # Syntax highlighting
 znap source zsh-users/zsh-autosuggestions # Autosuggest commands on type
@@ -36,6 +37,11 @@ HISTSIZE=100000
 SAVEHIST=100000
 setopt SHARE_HISTORY
 touch $HISTFILE
+
+# increase file limits
+ulimit -Sn 4096      # Increase open files.
+ulimit -Sl unlimited # Increase max locked memory.
+
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:~/.local/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
@@ -98,3 +104,13 @@ fi
 
 # bun completions
 [ -s "/Users/pieter/.bun/_bun" ] && source "/Users/pieter/.bun/_bun"
+alias ph=pnpm hot
+alias ph="pnpm hot"
+
+# pnpm
+export PNPM_HOME="/Users/pieter/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

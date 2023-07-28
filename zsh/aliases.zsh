@@ -52,4 +52,5 @@ alias l='exa -alh'
 
 if [[ $OSTYPE == 'darwin'* ]]; then
   alias trm=trash # Throw it in the bin instead of a hard delete
+  alias sed=gsed
 fi
