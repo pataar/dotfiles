@@ -4,7 +4,8 @@ source_if_exists () {
         source "$1"
     fi
 }
-source_if_exists $HOME/.env.sh
+
+source_if_exists "$HOME/.env.sh"
 
 # Init everything
 
@@ -44,7 +45,7 @@ ulimit -Sl unlimited # Increase max locked memory.
 
 
 # User configuration
-export PATH="/usr/local/bin:/usr/bin:/bin:~/.local/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:~/.local/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
 export TZ="Europe/Amsterdam"
 
 # Handle Mac platforms
@@ -54,10 +55,6 @@ if [[ "$CPU" == "arm" ]]; then
     export EDITOR=/opt/homebrew/bin/nano
     alias nano=/opt/homebrew/bin/nano
     alias oldbrew=/usr/local/bin/brew
-else
-    export PATH="/usr/local/bin:$PATH"
-    export EDITOR=/usr/local/bin/nano
-    alias nano=/usr/local/bin/nano
 fi
 
 
