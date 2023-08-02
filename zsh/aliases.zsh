@@ -49,6 +49,13 @@ function take {
 alias s='source ~/.zshrc'
 alias l='exa -alh'
 
+# Alias for tar with gzip and progress, using folder name as default archive name
+function tgz() { tar -czvf "${1:-$(basename "$PWD")}.tar.gz" "$1"; }
+function utgz() { tar -xzvf "$1"; }
+
+zstyle ':completion:*:tgz:*' file-sort size
+# Custom completion function for utgz alias
+zstyle ':completion:*:utgz:*' file-patterns '*.tar.gz *(.)'
 
 if [[ $OSTYPE == 'darwin'* ]]; then
   alias trm=trash # Throw it in the bin instead of a hard delete
