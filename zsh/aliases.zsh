@@ -60,4 +60,5 @@ zstyle ':completion:*:utgz:*' file-patterns '*.tar.gz *(.)'
 if [[ $OSTYPE == 'darwin'* ]]; then
   alias trm=trash # Throw it in the bin instead of a hard delete
   alias sed=gsed
+  alias isleep="pmset sleepnow"
 fi

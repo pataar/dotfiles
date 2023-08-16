@@ -95,7 +95,7 @@ export LC_ALL=en_US.UTF-8
 
 # Auto start tmux when we're not in a tmux session
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
+    # tmux attach -t default || tmux new -s default
 fi
 
 # bun completions
