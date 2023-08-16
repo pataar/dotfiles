@@ -1,1 +1,2 @@
 $DOTFILES/kitty/kitty.conf=$HOME/.config/kitty/kitty.conf
+$DOTFILES/kitty/whiskers.icns=$HOME/.config/kitty/kitty.app.icns
