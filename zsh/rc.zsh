@@ -86,7 +86,6 @@ bindkey  "^[[F"   end-of-line
 unsetopt BANG_HIST
 
 eval "$(oh-my-posh init zsh --config $DOTFILES/oh-my-posh/config.json)"
-source_if_exists $DOTFILES/zsh/lang.zsh
 
 # We need to accept UTF 8
 export LANG=en_US.UTF-8
@@ -101,10 +100,5 @@ fi
 # bun completions
 [ -s "/Users/pieter/.bun/_bun" ] && source "/Users/pieter/.bun/_bun"
 
-# pnpm
-export PNPM_HOME="/Users/pieter/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
 # pnpm end
+source_if_exists $DOTFILES/zsh/lang.zsh

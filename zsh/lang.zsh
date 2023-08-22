@@ -11,10 +11,6 @@ export ANDROID_HOME="$ANDROID_SDK_ROOT"
 # Golang
 # export PATH="$(go env GOPATH)/bin:$PATH"
 
-# Volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
 # bun completions
 [ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
 
@@ -31,3 +27,14 @@ source_if_exists ~/.asdf/plugins/java/set-java-home.zsh
 # pnpm
 export PNPM_HOME="/Users/pieter/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
+
+# Volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$VOLTA_HOME/tools/image/packages/corepack/bin/:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/pieter/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
