@@ -33,7 +33,7 @@ brew "automake"
 brew 'asdf'
 brew 'bash'
 brew 'curl'
-brew 'exa'
+brew 'eza'
 brew 'fzf'
 brew 'git'
 brew 'git-cliff'

@@ -20,7 +20,6 @@ export DEFAULT_USER=$(whoami)
 alias git_current_branch="git branch --show-current"
 alias git_recent_branches="git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
 
-
 znap source ohmyzsh/ohmyzsh plugins/git # Git aliases
 znap source zdharma/fast-syntax-highlighting # Syntax highlighting
 znap source zsh-users/zsh-autosuggestions # Autosuggest commands on type
@@ -80,7 +79,7 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 
-[[ -f "~/.fastlane_session" ]] && source ~/.fastlane_session
+source_if_exists ~/.fastlane_session
 
 # Enable the use of '!'
 unsetopt BANG_HIST
@@ -97,8 +96,4 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     # tmux attach -t default || tmux new -s default
 fi
 
-# bun completions
-[ -s "/Users/pieter/.bun/_bun" ] && source "/Users/pieter/.bun/_bun"
-
-# pnpm end
 source_if_exists $DOTFILES/zsh/lang.zsh

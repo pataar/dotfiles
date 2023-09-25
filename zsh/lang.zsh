@@ -1,6 +1,4 @@
-# asdf
-. "$HOME/.asdf/asdf.sh"
-# . ~/.asdf/plugins/java/set-java-home.zshs
+
 # Rust
 [[ -f "$HOME/.cargo/env" ]] && . $HOME/.cargo/env
 
@@ -12,7 +10,7 @@ export ANDROID_HOME="$ANDROID_SDK_ROOT"
 # export PATH="$(go env GOPATH)/bin:$PATH"
 
 # bun completions
-[ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
+source_if_exists "~/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -24,13 +22,9 @@ source_if_exists /opt/homebrew/etc/profile.d/z.sh
 
 # java stuff
 source_if_exists ~/.asdf/plugins/java/set-java-home.zsh
-# pnpm
-export PNPM_HOME="/Users/pieter/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
 
-# Volta
 export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$VOLTA_HOME/tools/image/packages/corepack/bin/:$PATH"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="/Users/pieter/.local/share/pnpm"
@@ -38,3 +32,6 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+# asdf
+[[ -f "$HOME/.asdf/asdf.sh" ]] && . "$HOME/.asdf/asdf.sh"
