@@ -7,9 +7,11 @@
     followTags = true
 [gpg]
 	program = gpg
+	format = ssh
 [alias]
 	git = !exec git
 	unstage = reset HEAD --
+	accept = !git add . && git commit --no-edit && git push
 [color]
 	ui = true
 [pager]
@@ -56,10 +58,24 @@
 	repo = /Users/pieter/.zsh/zsh-autosuggestions
 	repo = /Users/pieter/.zsh/zsh-snap
 	repo = /Users/pieter/.zsh/zsh-z
+	repo = /Users/pieter/projects/dotfiles/zsh/zsh-snap-repos/fast-syntax-highlighting
+	repo = /Users/pieter/projects/dotfiles/zsh/zsh-snap-repos/git-prune
+	repo = /Users/pieter/projects/dotfiles/zsh/zsh-snap-repos/ohmyzsh
+	repo = /Users/pieter/projects/dotfiles/zsh/zsh-snap-repos/pure
+	repo = /Users/pieter/projects/dotfiles/zsh/zsh-snap-repos/zsh-autosuggestions
+	repo = /Users/pieter/projects/dotfiles/zsh/zsh-snap-repos/zsh-z
+	repo = /Users/pieter/projects/dotfiles/zsh/zsh-snap-repos/go-task-completions
+	repo = /Users/pieter/projects/dotfiles/zsh/zsh-snap-repos/task
+	repo = /Users/pieter/projects/patientjourneyapp-gen
+	repo = /Users/pieter/projects/patientjourneyapp
 [help]
 	autocorrect = prompt
 [user]
 	email = pieter@interactivestudios.nl
 	name = pieter
-[credential]
+	[credential]
 	helper = osxkeychain
+	
+[diff "lockb"]
+	binary = true
+	textconv = bun

@@ -97,3 +97,6 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
 fi
 
 source_if_exists $DOTFILES/zsh/lang.zsh
+
+# bun completions
+[ -s "/Users/pieter/.bun/_bun" ] && source "/Users/pieter/.bun/_bun"

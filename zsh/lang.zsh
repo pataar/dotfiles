@@ -34,4 +34,4 @@ case ":$PATH:" in
 esac
 
 # asdf
-[[ -f "$HOME/.asdf/asdf.sh" ]] && . "$HOME/.asdf/asdf.sh"
+eval "$(command -v rtx && rtx activate zsh)" 

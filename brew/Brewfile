@@ -30,7 +30,6 @@ brew "autoconf"
 brew "automake"
 
 # Install Binaries
-brew 'asdf'
 brew 'bash'
 brew 'curl'
 brew 'eza'
@@ -51,6 +50,7 @@ brew 'openssl'
 brew 'pygments'
 brew 'ripgrep'
 brew 'rsync'
+brew 'rtx'
 brew 'scrcpy'
 brew 'tmux'
 brew 'trash'
