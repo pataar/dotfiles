@@ -1,0 +1,8 @@
+[tools]
+node = "20"
+php = "8.2"
+go = "latest"
+bun = "1"
+
+[settings]
+experimental = true
