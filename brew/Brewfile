@@ -4,14 +4,6 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
-tap "homebrew/services"
-
-tap "achannarasappa/tap"
-tap "adoptopenjdk/openjdk"
-tap "getsentry/tools"
-tap "rockymadden/rockymadden"
-tap "wez/wezterm"
-tap "zaquestion/tap"
 
 # Make sure apps get installed in system Applications dir
 cask_args appdir: '/Applications'
@@ -37,6 +29,7 @@ brew 'fzf'
 brew 'git'
 brew 'git-cliff'
 brew 'git-delta'
+brew "ggrep"
 brew "gh"
 brew 'glab'
 brew 'htop'
@@ -52,6 +45,7 @@ brew 'ripgrep'
 brew 'rsync'
 brew 'rtx'
 brew 'scrcpy'
+brew 'termapps/tap/enquirer' # for `mr` command
 brew 'tmux'
 brew 'trash'
 brew 'watch'

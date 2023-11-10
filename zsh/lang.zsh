@@ -1,4 +1,3 @@
-
 # Rust
 [[ -f "$HOME/.cargo/env" ]] && . $HOME/.cargo/env
 
@@ -29,9 +28,11 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # pnpm
 export PNPM_HOME="/Users/pieter/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
 # asdf
-eval "$(command -v rtx && rtx activate zsh)" 
+if command -v rtx >/dev/null 2>&1; then
+  eval "$(rtx activate zsh)"
+fi

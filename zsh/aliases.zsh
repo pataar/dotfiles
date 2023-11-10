@@ -1,29 +1,14 @@
 # Aliases
-alias art="php artisan"
 alias "c"="code"
 alias "c."="c ."
-alias ci="composer install"
-alias cdu="composer du"
-alias glmb="lab mr browse"
-# alias lmco="glab mr create -a "$(whoami)" --remove-source-branch --squash-before-merge --push -y -b" replaced by glmr
-alias gissue="glab issue view --web"
-alias ni="npm install"
-alias reloadcli="source $HOME/.zshrc"
-alias weather="curl -4 http://wttr.in"
 alias y="yarn"
-alias yw="yarn watch"
-alias yb="yarn build"
-alias yh="yarn hot"
 alias up="docker compose up -d --build"
 alias down="docker compose down"
-alias dcep="docker compose exec php"
-alias dcp="docker compose pull"
-alias dupd="dcp && up"
 alias gg="lazygit"
 alias b="git checkout -b"
 alias trim="awk '{\$1=\$1;print}'"
 alias x="exit"
-alias lv="lvim ." # Open lunarvim in current directory
+alias nv="nvim ." # Open neovim in current directory
 
 alias ta='tmux attach -t'
 alias docker-compose="docker compose"
@@ -36,36 +21,40 @@ alias mrmerge="glab mr merge"
 
 # Git aliases
 alias last_commit_message="git show -s --format=%s"
-alias refresh_remote_tags="git tag -d \$(git tag) && git fetch --tags"
+alias refresh_local_tags="git tag -d \$(git tag) && git fetch --tags"
 
 if [ -x "$(command -v kitty)" ]; then
-alias ssh="kitty +kitten ssh"
-fi;
+  alias ssh="kitty +kitten ssh"
+fi
 
 function prune-branches {
   git branch -vv | grep ': gone]' | grep -v '\*' | awk '{ print $1; }' | xargs -r git branch -D
 }
 
-function glmr(){ glab mr create -a "$(whoami)" --title "$(last_commit_message)" --remove-source-branch --squash-before-merge --push -y --draft --fill -b $1 }
+function mr() {
+
+  YELLOW='\e[0;33m'
+  CYAN='\e[0;36m'
+  RESET='\e[0m' # Reset color
+  echo -e ""
+  echo -e "${YELLOW}mr utility by ${CYAN}pataar${RESET}"
+
+  title=$(enquirer input -m "Title" -d "$(last_commit_message)" | trim)
+  default_description=$(echo $title | grep -o '#[0-9]*')
+  description=$(enquirer input -m "Description" -d ${default_description:-"Zie titel."} | trim)
+  description_replaced=$(cat $DOTFILES/zsh/templates/gitlab_mr | sed "s/TBD/${description}/g")
+  reviewers=$(enquirer multi-select barend darryll jeroens musa nihat remco sander mondo --message "Reviewers" | tr '\n' ',')
+
+  if [ -n "$title" ] && [ -n "$description" ] && [ -n "$reviewers" ]; then
+    glab mr create --title $title --description $description_replaced --push -a "$(whoami)" --remove-source-branch --squash-before-merge --reviewer ${reviewers%,} $@
+  else
+    echo "Error: Missing required variables"
+  fi
+}
 
 function take {
   mkdir -p $1
   cd $1
-}
-
-# https://chan.dev/p/
-function p {
-  if [[ -f bun.lockb ]]; then
-    command bun "$@"
-  elif [[ -f pnpm-lock.yaml ]]; then
-    command pnpm "$@"
-  elif [[ -f yarn.lock ]]; then
-    command yarn "$@"
-  elif [[ -f package-lock.json ]]; then
-    command npm "$@"
-  else
-    command pnpm "$@"
-  fi
 }
 
 alias s='source ~/.zshrc'
@@ -82,5 +71,6 @@ zstyle ':completion:*:utgz:*' file-patterns '*.tar.gz *(.)'
 if [[ $OSTYPE == 'darwin'* ]]; then
   alias trm=trash # Throw it in the bin instead of a hard delete
   alias sed=gsed
+  alias grep=ggrep
   alias isleep="pmset sleepnow"
 fi

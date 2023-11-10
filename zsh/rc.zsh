@@ -44,7 +44,7 @@ ulimit -Sl unlimited # Increase max locked memory.
 
 
 # User configuration
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:~/.local/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
+export PATH="$PATH:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:~/.local/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
 export TZ="Europe/Amsterdam"
 
 # Handle Mac platforms
@@ -55,7 +55,6 @@ if [[ "$CPU" == "arm" ]]; then
     alias nano=/opt/homebrew/bin/nano
     alias oldbrew=/usr/local/bin/brew
 fi
-
 
 preexec() { print -Pn "\e]0;$1\a" } # Show the command in the terminal title bar
 

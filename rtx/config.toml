@@ -2,7 +2,7 @@
 node = "20"
 php = "8.2"
 go = "latest"
-bun = "1"
+bun = "1.0.11"
 
 [settings]
 experimental = true

@@ -1,0 +1,47 @@
+## What does this MR do?
+
+TBD
+
+# Checklist
+
+## For the author of this MR
+
+##### Please set the MR to `Draft:` or `WIP:` if the MR is not ready for review
+
+### Documentation
+
+- [ ] When changing API or Webhook specifications, I added/updated documentation.
+
+### Availability and testing
+
+- [ ] I made sure that my code is automatically tested, where possible.
+- [ ] I have updated the respective risk analysis file that belongs to my change, if applicable.
+- [ ] If your code references specific labels/names in the database, confirm that you've included a data-consistency test to maintain integrity.
+
+### Code quality
+
+- [x] I followed our [the code standards](https://www.notion.so/interactivestudios/Code-standards-WIP-dbd8e7d5376547f7acc469c6f433e651?pvs=4). <sup>🟡</sup>
+
+### Translations (Only needed if you made changes there).
+
+- [ ] I added translations to at least the Dutch translation file.
+- [ ] The translations are approved by either an [UX translator](https://app.glassfrog.com/organizations/27483/orgnav/roles/13730499) or a [Customer Communicator](https://app.glassfrog.com/organizations/27483/orgnav/roles/13735307).
+- [ ] I used replacements for certain labels when needed (patient, specialism, etc).
+
+### Validity
+
+- [x] I have tested and reviewed the changes of this MR myself. <sup>🟡</sup>
+
+### Test cases
+
+- [ ] I updated the respective test case in the Test Plan project that has affiliation to this change, if applicable.
+  - [ ] If you have checked the previous checkbox, copy- and paste the link here: `<link>`
+
+---
+
+## For the reviewer(s)
+
+- [ ] I verify that all relevant checkboxes of the developer have been ticked. <sup>🟡</sup>
+- [ ] If a test case is applicable, I verify the added or edited test case compliant to the feature or addition.
+- [ ] I have functionally tested the change and everything seems in order.
+- [ ] I have reviewed the code thoroughly on technicality, logic and best-practices.
