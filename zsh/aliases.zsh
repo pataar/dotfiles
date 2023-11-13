@@ -5,7 +5,6 @@ alias y="yarn"
 alias up="docker compose up -d --build"
 alias down="docker compose down"
 alias gg="lazygit"
-alias b="git checkout -b"
 alias trim="awk '{\$1=\$1;print}'"
 alias x="exit"
 alias nv="nvim ." # Open neovim in current directory
@@ -28,9 +27,25 @@ if [ -x "$(command -v kitty)" ]; then
 fi
 
 function prune-branches {
-  git branch -D $(enquirer multi-select $(git branch --list) --message "Branches to delete")
-  git remote prune origin
-  git maintenance run
+  branches_to_delete=$(enquirer multi-select $(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)') --message "Branch to delete")
+
+  if [ -n "$branches_to_delete" ]; then
+    git branch -D
+    git remote prune origin
+    git maintenance run
+  fi
+}
+
+function b+ {
+  branch_name = $(enquirer input --message "Branch name")
+  if [ -n "$branch_name" ]; then
+    git checkout -b "$branch_name"
+  fi
+}
+
+function b {
+  git checkout $(enquirer select $(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)') --message "Branch to checkout")
+  git pull
 }
 
 function mr() {
