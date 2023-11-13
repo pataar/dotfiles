@@ -28,7 +28,9 @@ if [ -x "$(command -v kitty)" ]; then
 fi
 
 function prune-branches {
-  git branch -vv | grep ': gone]' | grep -v '\*' | awk '{ print $1; }' | xargs -r git branch -D
+  git branch -D $(enquirer multi-select $(git branch --list) --message "Branches to delete")
+  git remote prune origin
+  git maintenance run
 }
 
 function mr() {
