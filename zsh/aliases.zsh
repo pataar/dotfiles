@@ -54,6 +54,29 @@ function mr() {
   fi
 }
 
+function mari {
+  title=$(echo "MAR: $(enquirer input -m "Title" | trim)")
+  description_file="$(mktemp -t description tmp.XXXXXXXXX).md"
+  description=""
+  cat <<EOF >"$description_file"
+$description
+
+
+/label ~"App rewrite" 
+/epic health/patientjourneyapp&2 
+EOF
+
+  nvim "$description_file" +startinsert
+
+  # Read the content of the temporary file into the variable
+  description=$(cat "$description_file")
+
+  # Cleanup: Remove the temporary file
+  rm "$description_file"
+  echo $description
+  glab issue create --title $title --description $description
+}
+
 function take {
   mkdir -p $1
   cd $1

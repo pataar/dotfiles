@@ -1,9 +1,6 @@
 [submodule "zsh/zsh-snap"]
-	path = zsh/zsh-snap
-	url = https://github.com/marlonrichert/zsh-snap.git
+path = zsh/zsh-snap
+url = https://github.com/marlonrichert/zsh-snap.git
 [submodule "tmux/plugins/tpm"]
-	path = tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
-[submodule "nvim/AstroNvim"]
-	path = nvim/AstroNvim
-	url = https://github.com/AstroNvim/AstroNvim
+path = tmux/plugins/tpm
+url = https://github.com/tmux-plugins/tpm

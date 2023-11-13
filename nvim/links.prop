@@ -1,2 +1,1 @@
-$DOTFILES/nvim/AstroNvim=$HOME/.config/nvim
-$DOTFILES/nvim/user_config=$HOME/.config/nvim/lua/user
+$DOTFILES/nvim/config=$HOME/.config/nvim
