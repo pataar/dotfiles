@@ -26,6 +26,7 @@ if [ -x "$(command -v kitty)" ]; then
   alias ssh="kitty +kitten ssh"
 fi
 
+# Branch pruner
 function prune-branches {
   branches_to_delete=$(enquirer multi-select $(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)') --message "Branch to delete")
 
@@ -36,18 +37,28 @@ function prune-branches {
   fi
 }
 
+# Branch creator
 function b+ {
-  branch_name = $(enquirer input --message "Branch name")
+  branch_name=${1:-$(enquirer input --message "Branch name")}
   if [ -n "$branch_name" ]; then
     git checkout -b "$branch_name"
   fi
 }
 
+# Branch switcher
 function b {
   git checkout $(enquirer select $(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)') --message "Branch to checkout")
   git pull
 }
 
+# Code review
+function cr {
+  glab mr checkout $1
+  git pull
+  task setup frontend:build open
+}
+
+# MR creator
 function mr() {
 
   YELLOW='\e[0;33m'
@@ -58,7 +69,7 @@ function mr() {
 
   title=$(enquirer input -m "Title" -d "$(last_commit_message)" | trim)
   default_description=$(echo $title | grep -o '#[0-9]*')
-  description=$(enquirer input -m "Description" -d ${default_description:-"Zie titel."} | trim)
+  description=$(enquirer input -m "Description" -d ${default_description:-"Zie titel"} | trim)
   description_replaced=$(cat $DOTFILES/zsh/templates/gitlab_mr | sed "s/TBD/${description}/g")
   reviewers=$(enquirer multi-select barend darryll jeroens musa nihat remco sander mondo --message "Reviewers" | tr '\n' ',')
 
@@ -105,7 +116,7 @@ function tgz() { tar -czvf "${1:-$(basename "$PWD")}.tar.gz" "$1"; }
 function utgz() { tar -xzvf "$1"; }
 
 zstyle ':completion:*:tgz:*' file-sort size
-# Custom completion function for utgz alias
+# # Custom completion function for utgz alias
 zstyle ':completion:*:utgz:*' file-patterns '*.tar.gz *(.)'
 
 if [[ $OSTYPE == 'darwin'* ]]; then

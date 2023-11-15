@@ -5,14 +5,17 @@ source_if_exists () {
     fi
 }
 
+export PATH="$PATH:/opt/homebrew/bin/:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:~/.local/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
+
 source_if_exists "$HOME/.env.sh"
 
-# Init everything
+# Download Znap, if it's not there yet.
+[[ -r ~/.config/znap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/.config/znap
+source ~/.config/znap/znap.zsh  # Start Znap
 
-zstyle ':znap:*' repos-dir "$DOTFILES/zsh/zsh-snap-repos"
-
-# Init Znap
-source_if_exists $DOTFILES/zsh/zsh-snap/znap.zsh  # Start Znap
+eval "$(oh-my-posh init zsh --config $DOTFILES/oh-my-posh/config.json)"
 
 export GIT_MERGE_AUTOEDIT=no
 export DEFAULT_USER=$(whoami)
@@ -20,9 +23,9 @@ export DEFAULT_USER=$(whoami)
 alias git_current_branch="git branch --show-current"
 alias git_recent_branches="git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
 
-znap source ohmyzsh/ohmyzsh plugins/git # Git aliases
-znap source zdharma/fast-syntax-highlighting # Syntax highlighting
+znap source ohmyzsh/ohmyzsh plugins/git
 znap source zsh-users/zsh-autosuggestions # Autosuggest commands on type
+znap source zsh-users/zsh-syntax-highlighting
 
 source_if_exists $DOTFILES/zsh/history.zsh
 source_if_exists $DOTFILES/zsh/git.zsh
@@ -58,6 +61,8 @@ fi
 
 preexec() { print -Pn "\e]0;$1\a" } # Show the command in the terminal title bar
 
+znap prompt
+
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 export PHP_CS_FIXER_IGNORE_ENV=1
@@ -83,7 +88,6 @@ source_if_exists ~/.fastlane_session
 # Enable the use of '!'
 unsetopt BANG_HIST
 
-eval "$(oh-my-posh init zsh --config $DOTFILES/oh-my-posh/config.json)"
 
 # We need to accept UTF 8
 export LANG=en_US.UTF-8
@@ -99,3 +103,16 @@ source_if_exists $DOTFILES/zsh/lang.zsh
 
 # bun completions
 [ -s "/Users/pieter/.bun/_bun" ] && source "/Users/pieter/.bun/_bun"
+
+
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
