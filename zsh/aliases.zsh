@@ -27,13 +27,13 @@ if [ -x "$(command -v kitty)" ]; then
 fi
 
 # Branch pruner
-function prune-branches {
+function bxx {
   branches_to_delete=$(enquirer multi-select $(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)') --message "Branch to delete")
 
   if [ -n "$branches_to_delete" ]; then
-    git branch -D
-    git remote prune origin
-    git maintenance run
+    git branch -D $(echo $branches_to_delete)
+    git remote prune origin 2>/dev/null
+    git maintenance run 2>/dev/null
   fi
 }
 
@@ -47,15 +47,23 @@ function b+ {
 
 # Branch switcher
 function b {
-  git checkout $(enquirer select $(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)') --message "Branch to checkout")
-  git pull
+  branch_name=${1:-$(enquirer select $(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)') --message "Branch to checkout")}
+  if [ -n "$branch_name" ]; then
+    git checkout $branch_name
+    git pull 2>/dev/null
+    if [ -f Taskfile.yml ]; then
+      task setup
+    fi
+  fi
 }
 
 # Code review
 function cr {
   glab mr checkout $1
   git pull
-  task setup frontend:build open
+  if [ -f Taskfile.yml ]; then
+    task setup open
+  fi
 }
 
 # MR creator
@@ -99,7 +107,7 @@ EOF
 
   # Cleanup: Remove the temporary file
   rm "$description_file"
-  echo $description
+
   glab issue create --title $title --description $description
 }
 
