@@ -18,6 +18,9 @@ alias mrdiff="glab mr diff"
 alias mrapprove="glab mr approve"
 alias mrmerge="glab mr merge"
 
+alias a="task exec -- php artisan "
+alias nah="git reset --hard HEAD && git clean -fd"
+
 # Git aliases
 alias last_commit_message="git show -s --format=%s"
 alias refresh_local_tags="git tag -d \$(git tag) && git fetch --tags"
@@ -79,7 +82,7 @@ function mr() {
   default_description=$(echo $title | grep -o '#[0-9]*')
   description=$(enquirer input -m "Description" -d ${default_description:-"Zie titel"} | trim)
   description_replaced=$(cat $DOTFILES/zsh/templates/gitlab_mr | sed "s/TBD/${description}/g")
-  reviewers=$(enquirer multi-select barend darryll jeroens musa nihat remco sander mondo --message "Reviewers" | tr '\n' ',')
+  reviewers=$(enquirer multi-select barend darryll jeroens musa nihat remco sander mondo pieter --message "Reviewers" | tr '\n' ',')
 
   if [ -n "$title" ] && [ -n "$description" ] && [ -n "$reviewers" ]; then
     glab mr create --title $title --description $description_replaced --push -a "$(whoami)" --remove-source-branch --squash-before-merge --reviewer ${reviewers%,} $@

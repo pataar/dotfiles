@@ -34,17 +34,18 @@ source_if_exists $DOTFILES/zsh/aliases.zsh
 source_if_exists /usr/local/etc/profile.d/z.sh
 source_if_exists /opt/homebrew/etc/profile.d/z.sh
 
-HISTFILE=~/.zsh_history
-HISTTIMEFORMAT="%F %T "
-HISTSIZE=100000
-SAVEHIST=100000
+HISTFILE=~/.pataar_zsh_history
+HISTSIZE=10000000
+SAVEHIST=10000000
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY
 touch $HISTFILE
 
 # increase file limits
 ulimit -Sn 4096      # Increase open files.
 ulimit -Sl unlimited # Increase max locked memory.
-
 
 # User configuration
 export PATH="$PATH:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:~/.local/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"

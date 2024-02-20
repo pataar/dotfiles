@@ -14,7 +14,7 @@ TBD
 
 ### Availability and testing
 
-- [ ] I made sure that my code is automatically tested, where possible.
+- [ ] I made sure that my code is automatically tested. If not, I stated why it wasn't needed. <sup>🟡</sup>
 - [ ] I have updated the respective risk analysis file that belongs to my change, if applicable.
 - [ ] If your code references specific labels/names in the database, confirm that you've included a data-consistency test to maintain integrity.
 
