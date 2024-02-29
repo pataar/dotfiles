@@ -1,13 +1,15 @@
 # Aliases
 alias "c"="code"
 alias "c."="c ."
+alias "z."="zed ." # Open zed in current directory
+alias "n."="nvim ." # Open neovim in current directory
+
 alias y="yarn"
 alias up="docker compose up -d --build"
 alias down="docker compose down"
 alias gg="lazygit"
 alias trim="awk '{\$1=\$1;print}'"
 alias x="exit"
-alias nv="nvim ." # Open neovim in current directory
 
 alias ta='tmux attach -t'
 alias docker-compose="docker compose"
@@ -99,8 +101,8 @@ function mari {
 $description
 
 
-/label ~"App rewrite" 
-/epic health/patientjourneyapp&2 
+/label ~"App rewrite"
+/epic health/patientjourneyapp&2
 EOF
 
   nvim "$description_file" +startinsert
