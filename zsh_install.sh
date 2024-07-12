@@ -18,12 +18,5 @@ then
   mkcert -install
 fi
 
-## Install NPM dependencies and the correct registry
-if command -v volta &> /dev/null
-then
-  echo "${COLORED}Installing volta stuff...${NC}"
-  volta install node@lts yarn
-fi
 
 echo "\033[0;36m| Done installing. | "
-

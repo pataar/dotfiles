@@ -1,7 +1,7 @@
 # Aliases
 alias "c"="code"
 alias "c."="c ."
-alias "z."="zed ." # Open zed in current directory
+alias "z."="zed ."  # Open zed in current directory
 alias "n."="nvim ." # Open neovim in current directory
 
 alias y="yarn"
@@ -56,9 +56,6 @@ function b {
   if [ -n "$branch_name" ]; then
     git checkout $branch_name
     git pull 2>/dev/null
-    if [ -f Taskfile.yml ]; then
-      task setup
-    fi
   fi
 }
 
@@ -69,6 +66,12 @@ function cr {
   if [ -f Taskfile.yml ]; then
     task setup open
   fi
+}
+
+function gmm() {
+  git fetch origin $1:$1 &&
+    git merge $1 &&
+    git push
 }
 
 # MR creator

@@ -22,9 +22,6 @@ source_if_exists /opt/homebrew/etc/profile.d/z.sh
 # java stuff
 source_if_exists ~/.asdf/plugins/java/set-java-home.zsh
 
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
 # pnpm
 export PNPM_HOME="/Users/pieter/.local/share/pnpm"
 case ":$PATH:" in
