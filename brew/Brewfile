@@ -29,7 +29,6 @@ brew "gh"
 brew 'glab'
 brew 'go-task/tap/go-task'
 brew 'htop'
-brew 'jandedobbeleer/oh-my-posh/oh-my-posh'
 brew 'jq'
 brew 'lazygit'
 brew 'nano'
