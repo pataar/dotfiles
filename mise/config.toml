@@ -5,6 +5,7 @@ go = "latest"
 bun = "1"
 rust = "latest"
 pnpm = "9"
+python = "latest"
 
 [settings]
 experimental = true

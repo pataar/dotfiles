@@ -15,7 +15,8 @@ source_if_exists "$HOME/.env.sh"
         https://github.com/marlonrichert/zsh-snap.git ~/.config/znap
 source ~/.config/znap/znap.zsh  # Start Znap
 
-eval "$(oh-my-posh init zsh --config $DOTFILES/oh-my-posh/config.json)"
+# eval "$(oh-my-posh init zsh --config $DOTFILES/oh-my-posh/config.json)"
+eval "$(starship init zsh)"
 
 export GIT_MERGE_AUTOEDIT=no
 export DEFAULT_USER=$(whoami)
