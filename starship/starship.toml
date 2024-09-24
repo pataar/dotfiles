@@ -3,7 +3,7 @@
 add_newline = false
 continuation_prompt = "[▸▹ ](dimmed white)"
 
-format = """$cmd_duration\
+format = """
 $hostname\
 $localip\
 $shlvl\
