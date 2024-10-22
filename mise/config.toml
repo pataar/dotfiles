@@ -5,7 +5,6 @@ bun = "1"
 rust = "latest"
 pnpm = "9"
 python = "latest"
-php = "8.3"
 
 [settings]
 experimental = true

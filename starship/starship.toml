@@ -90,6 +90,8 @@ $os\
 $battery\
 $time"""
 
+command_timeout=1500
+
 [git_metrics]
 disabled = false
 

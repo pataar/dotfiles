@@ -33,3 +33,6 @@ esac
 if command -v mise >/dev/null 2>&1; then
   eval "$(mise activate zsh)"
 fi
+
+export PATH="/Users/pieter/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/Users/pieter/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"

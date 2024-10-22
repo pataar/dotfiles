@@ -95,6 +95,20 @@ function mr() {
     echo "Error: Missing required variables"
   fi
 }
+# MR creator
+function release-branch() {
+
+  version=$(cat version)
+
+  if [ -n "$version" ]; then
+    title="chore(release): $version"
+    assignees=$(enquirer multi-select barend darryll jeroens musa nihat remco sander mondo pieter --message "Assignees" | tr '\n' ',')
+    reviewers="paul"
+    glab mr create -b master --title $title--push -a ${assignees%,} --reviewer $reviewers $@
+  else
+    echo "Error: Missing version file"
+  fi
+}
 
 function mari {
   title=$(echo "MAR: $(enquirer input -m "Title" | trim)")
@@ -141,3 +155,5 @@ if [[ $OSTYPE == 'darwin'* ]]; then
   alias grep=ggrep
   alias isleep="pmset sleepnow"
 fi
+
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
