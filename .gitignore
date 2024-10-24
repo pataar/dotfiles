@@ -1,1 +1,2 @@
 *.zwc
+brew/Brewfile.lock.json

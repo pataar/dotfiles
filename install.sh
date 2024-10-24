@@ -1,13 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 COLORED='\033[0;32m'
 NC='\033[0m'
 
-echo "\n";
+echo "\n"
 echo "\033[0;36m| Dev install script by Pataar | "
 echo "\033[0;36m| Running on $(whoami)@$(hostname) | "
-echo "\n";
-
+echo "\n"
 
 if [ "$(uname)" == "Darwin" ]; then
   echo "${COLORED}Setting up the Mac for $(whoami)...${NC}"
@@ -21,14 +20,14 @@ if [ "$(uname)" == "Darwin" ]; then
   # Handle Mac platforms
   CPU=$(uname -p)
   if [[ "$CPU" == "arm" ]]; then
-      export PATH="/opt/homebrew/bin:$PATH"
-      export EDITOR=/opt/homebrew/bin/nano
-      alias nano=/opt/homebrew/bin/nano
-      alias oldbrew=/usr/local/bin/brew
+    export PATH="/opt/homebrew/bin:$PATH"
+    export EDITOR=/opt/homebrew/bin/nano
+    alias nano=/opt/homebrew/bin/nano
+    alias oldbrew=/usr/local/bin/brew
   else
-      export PATH="/usr/local/bin:$PATH"
-      export EDITOR=/usr/local/bin/nano
-      alias nano=/usr/local/bin/nano
+    export PATH="/usr/local/bin:$PATH"
+    export EDITOR=/usr/local/bin/nano
+    alias nano=/usr/local/bin/nano
   fi
 
   # Update Homebrew recipes
@@ -52,4 +51,4 @@ if test $(which zsh); then
 fi
 
 zsh ./zsh_install.sh
-source ./bootstrap.sh
+bash ./bootstrap.sh

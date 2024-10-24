@@ -6,12 +6,12 @@ NC='\033[0m'
 echo "\033[0;36m| dotfiles | @pataar"
 echo "${COLORED}Updating the dev env of $(whoami)@$(hostname)...${NC}"
 
-. ./bootstrap.sh
+bash ./bootstrap.sh
 
 echo "${COLORED}Updating znap stuff...${NC}"
 if [ -x "$(command -v znap)" ]; then
-znap status
-znap pull
+  znap status
+  znap pull
 fi
 
 ## Update the mkcert root certificate
