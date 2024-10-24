@@ -1,5 +1,7 @@
 # Taps
 tap "homebrew/bundle"
+tap "termapps/tap"
+tap "go-task/tap"
 
 # Make sure apps get installed in system Applications dir
 cask_args appdir: '/Applications'
@@ -19,15 +21,18 @@ brew "automake"
 
 # Install Binaries
 brew 'bash'
+brew 'bat'
 brew 'colima'
 brew 'curl'
+brew 'docker'
+brew 'docker-credential-helper'
 brew 'eza'
 brew 'fzf'
 brew 'git'
 brew 'git-delta'
 brew "gh"
 brew 'glab'
-brew 'go-task/tap/go-task'
+brew 'go-task'
 brew 'htop'
 brew 'jq'
 brew 'lazygit'
@@ -39,7 +44,7 @@ brew 'ripgrep'
 brew 'rsync'
 brew 'scrcpy'
 brew 'starship'
-brew 'termapps/tap/enquirer' # for `mr` command
+brew 'enquirer'
 brew 'tmux'
 brew 'trash'
 brew 'watch'
@@ -63,9 +68,7 @@ cask 'font-jetbrains-mono-nerd-font'
 cask '1password'
 cask '1password-cli'
 cask 'appcleaner'
-cask 'bettertouchtool'
 cask 'bluesnooze'
-cask 'docker'
 cask 'firefox'
 cask 'firefox@developer-edition'
 cask 'fork'

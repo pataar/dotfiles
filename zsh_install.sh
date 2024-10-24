@@ -5,10 +5,6 @@ NC='\033[0m'
 
 echo "${COLORED}Installing .zshrc stuff...${NC}"
 
-if [[ "$(whoami)" == "pieter" ]]; then
-  cp ./git/.gitconfig ~/
-fi
-
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/.composer/vendor/bin"
 
 ## Install mkcert and the root certificate
