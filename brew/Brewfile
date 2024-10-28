@@ -22,7 +22,6 @@ brew "automake"
 # Install Binaries
 brew 'bash'
 brew 'bat'
-brew 'colima'
 brew 'curl'
 brew 'docker'
 brew 'docker-credential-helper'
@@ -78,6 +77,7 @@ cask 'kitty'
 cask 'obsidian'
 cask 'postman'
 cask 'rar'
+cask "rancher"
 cask "raycast"
 cask 'slack'
 cask 'spotify'
