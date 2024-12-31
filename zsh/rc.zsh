@@ -111,3 +111,9 @@ fi
 
 #override dev ip
 DEV_IP=10.0.0.1
+export PATH="/Users/p.willekens/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/Users/p.willekens/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/p.willekens/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
