@@ -8,11 +8,6 @@ echo "${COLORED}Updating the dev env of $(whoami)@$(hostname)...${NC}"
 
 bash ./bootstrap.sh
 
-echo "${COLORED}Updating znap stuff...${NC}"
-if [ -x "$(command -v znap)" ]; then
-  znap status
-  znap pull
-fi
 
 ## Update the mkcert root certificate
 if [ -x "$(command -v mkcert)" ]; then

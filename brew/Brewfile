@@ -8,6 +8,8 @@ cask_args appdir: '/Applications'
 
 # Install ZSH
 brew 'zsh'
+brew 'zsh-autosuggestions'
+brew 'zsh-fast-syntax-highlighting'
 
 # Install GNU core utilities (those that come with MacOS are outdated)
 brew 'coreutils'
