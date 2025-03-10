@@ -1,8 +1,10 @@
 # The syntax is "key = value". The whitespace around the
 # equals doesn't matter.
-background = 282c34
-foreground = ffffff
-keybind = ctrl+d=new_split:right
+keybind = ctrl+shift+up=new_split:up
+keybind = ctrl+shift+right=new_split:right
+keybind = ctrl+shift+left=new_split:left
+keybind = ctrl+shift+down=new_split:down
 font-family = "JetBrainsMono Nerd Font"
 window-padding-y = 5
 window-padding-x = 5
+theme = Monokai Pro

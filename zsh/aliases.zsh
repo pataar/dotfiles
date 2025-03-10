@@ -153,3 +153,5 @@ if [[ $OSTYPE == 'darwin'* ]]; then
 fi
 
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+
+alias ssh='TERM=xterm-256color ssh'

@@ -3,6 +3,7 @@
 	excludesfile = ~/.gitignore_global
 	mergeoptions = --no-edit
     pager = delta
+	ignorecase = false
 [push]
 	default = simple
     followTags = true
@@ -47,3 +48,5 @@
 	name = pieter	
 [credential]
 	helper = osxkeychain
+[rerere]
+	enabled = true
