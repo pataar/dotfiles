@@ -1,9 +1,6 @@
 [tools]
 node = "22"
-go = "latest"
-pnpm = "9"
-java = "zulu-17"
-ruby = "latest"
+pnpm = "latest"
 
 [settings]
 experimental = true
