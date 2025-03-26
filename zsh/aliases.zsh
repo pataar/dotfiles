@@ -63,16 +63,21 @@ function cr {
     task setup open
   fi
 }
+# Reset To Remote
+function rtr {
+  confirm=$(enquirer confirm --message "Are you sure you want to reset to remote? This removes all local (committed) changes.")
+  if [ "$confirm" = "true" ]; then
+    git reset --hard @{u}
+  fi
+}
 
 function gmm() {
   git fetch origin $1:$1 &&
-    git merge $1 &&
-    git push
+    git merge $1
 }
 
 # MR creator
 function mr() {
-
   YELLOW='\e[0;33m'
   CYAN='\e[0;36m'
   RESET='\e[0m' # Reset color
@@ -80,7 +85,8 @@ function mr() {
   echo -e "${YELLOW}mr utility by ${CYAN}pataar${RESET}"
 
   title=$(enquirer input -m "Title" -d "$(last_commit_message)" | trim)
-  default_description=$(echo $title | grep -o '#[0-9]*')
+  default_description="$(echo $title | grep -o '#[0-9]*')"
+  default_description="${default_description:+$default_description+}"
   description=$(enquirer input -m "Description" -d ${default_description:-"Zie titel"} | trim)
   description_replaced=$(cat $DOTFILES/zsh/templates/gitlab_mr | sed "s/TBD/${description}/g")
   reviewers=$(enquirer multi-select barend darryll jeroens musa melanie nihat remco sander mondo pieter --message "Reviewers" | tr '\n' ',')
