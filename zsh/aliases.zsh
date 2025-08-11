@@ -21,7 +21,6 @@ alias mrapprove="glab mr approve"
 alias mrmerge="glab mr merge"
 
 alias a="task exec -- php artisan "
-alias nah="git reset --hard HEAD && git clean -fd"
 
 # Git aliases
 alias last_commit_message="git show -s --format=%s"
@@ -29,7 +28,7 @@ alias refresh_local_tags="git tag -d \$(git tag) && git fetch --tags"
 
 # Branch pruner
 function bxx {
-  branches_to_delete=$(enquirer multi-select $(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)') --message "Branch to delete")
+  branches_to_delete=$(gum choose $(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)') --header "Branch to delete")
 
   if [ -n "$branches_to_delete" ]; then
     git branch -D $(echo $branches_to_delete)
@@ -38,9 +37,19 @@ function bxx {
   fi
 }
 
+# Branch pruner
+function brew_leaves_prune {
+  things_to_delete=$(gum filter --no-limit $(brew leaves) --header "Packages to delete")
+
+  if [ -n "$things_to_delete" ]; then
+    brew remove $(echo $things_to_delete)
+    brew cleanup
+  fi
+}
+
 # Branch creator
 function b+ {
-  branch_name=${1:-$(enquirer input --message "Branch name")}
+  branch_name=${1:-$(gum input --placeholder "Branch name")}
   if [ -n "$branch_name" ]; then
     git checkout -b "$branch_name"
   fi
@@ -48,8 +57,9 @@ function b+ {
 
 # Branch switcher
 function b {
-  branch_name=${1:-$(enquirer select $(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)') --message "Branch to checkout")}
+  branch_name=${1:-$(gum filter $(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)') --header "Branch to checkout")}
   if [ -n "$branch_name" ]; then
+    echo "Switching to branch: '$branch_name'"
     git checkout $branch_name
     git pull 2>/dev/null
   fi
@@ -64,11 +74,8 @@ function cr {
   fi
 }
 # Reset To Remote
-function rtr {
-  confirm=$(enquirer confirm --message "Are you sure you want to reset to remote? This removes all local (committed) changes.")
-  if [ "$confirm" = "true" ]; then
-    git reset --hard @{u}
-  fi
+function nah {
+  gum confirm "Are you sure you want to reset your changes? This removes all local (committed) changes." && git reset --hard HEAD && git clean -fd
 }
 
 function gmm() {
@@ -84,15 +91,15 @@ function mr() {
   echo -e ""
   echo -e "${YELLOW}mr utility by ${CYAN}pataar${RESET}"
 
-  title=$(enquirer input -m "Title" -d "$(last_commit_message)" | trim)
+  title=$(gum input --header "Title" --value "$(last_commit_message)" | trim)
   default_description="$(echo $title | grep -o '#[0-9]*')"
   default_description="${default_description:+$default_description+}"
-  description=$(enquirer input -m "Description" -d ${default_description:-"Zie titel"} | trim)
+  description=$(gum input --header "Description" --value ${default_description:-"Zie titel"} | trim)
   description_replaced=$(cat $DOTFILES/zsh/templates/gitlab_mr | sed "s/TBD/${description}/g")
-  reviewers=$(enquirer multi-select barend darryll jeroens musa melanie nihat remco sander mondo pieter --message "Reviewers" | tr '\n' ',')
+  reviewers=$(gum filter --no-limit $(glab api 'projects/:fullpath/members?per_page=100' | jq -r '.[]  | select(.access_level >= 30 and (.username | startswith("project_") | not)) | .username' | sort) --header "Reviewers" | tr '\n' ',')
 
   if [ -n "$title" ] && [ -n "$description" ] && [ -n "$reviewers" ]; then
-    glab mr create --title $title --description $description_replaced --push -a "pieter" --remove-source-branch --squash-before-merge --reviewer ${reviewers%,} $@
+    glab mr create --title $title --description $description_replaced --push -a $(glab api 'user' | jq -r .username) --remove-source-branch --squash-before-merge --reviewer ${reviewers%,} $@
   else
     echo "Error: Missing required variables"
   fi
@@ -104,35 +111,11 @@ function release-branch() {
 
   if [ -n "$version" ]; then
     title="chore(release): $version"
-    assignees=$(enquirer multi-select barend darryll jeroens musa nihat remco sander mondo pieter --message "Assignees" | tr '\n' ',')
-    reviewers="paul"
-    glab mr create -b master --title $title --push -a ${assignees%,} --reviewer $reviewers $@
+    assignees=$(gum filter --no-limit $(glab api 'projects/:fullpath/members?per_page=100' | jq -r '.[]  | select(.access_level >= 30 and (.username | startswith("project_") | not)) | .username' | sort) --header "Assignees" | tr '\n' ',')
+      glab mr create -b master --title $title --push -a ${assignees%,} --reviewer $reviewers $@
   else
     echo "Error: Missing version file"
   fi
-}
-
-function mari {
-  title=$(echo "MAR: $(enquirer input -m "Title" | trim)")
-  description_file="$(mktemp -t description tmp.XXXXXXXXX).md"
-  description=""
-  cat <<EOF >"$description_file"
-$description
-
-
-/label ~"App rewrite"
-/epic health/patientjourneyapp&2
-EOF
-
-  nvim "$description_file" +startinsert
-
-  # Read the content of the temporary file into the variable
-  description=$(cat "$description_file")
-
-  # Cleanup: Remove the temporary file
-  rm "$description_file"
-
-  glab issue create --title $title --description $description
 }
 
 function take {

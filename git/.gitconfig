@@ -45,7 +45,7 @@
 	autocorrect = prompt
 [user]
 	email = pieter@interactivestudios.nl
-	name = pieter	
+	name = pieter
 [credential]
 	helper = osxkeychain
 [rerere]
